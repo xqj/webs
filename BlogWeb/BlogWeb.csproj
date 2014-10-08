@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlogWeb</RootNamespace>
-    <AssemblyName>BlogWeb</AssemblyName>
+    <RootNamespace>Webs.BlogWeb</RootNamespace>
+    <AssemblyName>Webs.BlogWeb</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -157,7 +157,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Info\InfoAreaRegistration.cs" />
     <Compile Include="Areas\Resume\ResumeAreaRegistration.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,11 +175,11 @@
     <Content Include="Areas\Info\Views\Index.cshtml" />
     <Content Include="Areas\Info\Views\List.cshtml" />
     <Content Include="Areas\Info\Views\Detail.cshtml" />
-    <Content Include="Areas\Resume\Views\Web.config" />
     <Content Include="Areas\Resume\Views\Index.cshtml" />
-    <Content Include="Areas\Resume\Views\Skills.cshtml" />
     <Content Include="Areas\Resume\Views\Projects.cshtml" />
     <Content Include="Areas\Resume\Views\ResumeDetail.cshtml" />
+    <Content Include="Areas\Resume\Views\Skills.cshtml" />
+    <Content Include="Areas\Resume\Views\Web.config" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Index.aspx" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -210,13 +209,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Info\Controllers\" />
-    <Folder Include="Areas\Info\Models\" />
     <Folder Include="Areas\Info\Views\Shared\" />
-    <Folder Include="Areas\Resume\Controllers\" />
-    <Folder Include="Areas\Resume\Models\" />
     <Folder Include="Areas\Resume\Views\Shared\" />
     <Folder Include="Content\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
