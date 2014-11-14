@@ -34,7 +34,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Channel.cs" />
     <Compile Include="Model\GridPage.cs" />
+    <Compile Include="Model\Info.cs" />
+    <Compile Include="Model\Lable.cs" />
+    <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Model\OperationResult.cs" />
     <Compile Include="Model\OperationResultCodeType.cs" />
     <Compile Include="Model\UserInfo.cs" />
@@ -51,10 +56,13 @@
     <Compile Include="Controller\InfoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\ResumeController.cs" />
+    <Compile Include="Provider\ChannelServiceImp.cs" />
+    <Compile Include="Provider\InfoServiceImp.cs" />
+    <Compile Include="Provider\LableServiceImp.cs" />
+    <Compile Include="ViewModel\ChannelView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dao\" />
-    <Folder Include="Provider\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
