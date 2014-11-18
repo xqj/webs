@@ -15,12 +15,12 @@ namespace Webs.Provider
             get { return ChannelProvider._intance; }           
         }
 
-        internal List<Channel> GetShowIndexChannels(int channelCount)
+        internal List<Channel> GetShowIndexChannels(int channelCount,int siteId)
         {
             throw new NotImplementedException();
         }
 
-        internal List<Channel> GetAllList()
+        internal List<Channel> GetAllList(int siteId)
         {
             throw new NotImplementedException();
         }

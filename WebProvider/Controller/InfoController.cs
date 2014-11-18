@@ -11,6 +11,7 @@ namespace Webs.WebProvider
 {
     public class InfoController : Controller
     {
+        private int _siteId = 1;
         //
         // GET: /Info/
 
@@ -18,7 +19,7 @@ namespace Webs.WebProvider
         {
             Dictionary<int, ChannelView> blockData = new Dictionary<int, ChannelView>();
             int channelCount = 0;
-            var channels = ChannelProvider.Intance.GetShowIndexChannels(channelCount);
+            var channels = ChannelProvider.Intance.GetShowIndexChannels(channelCount, _siteId);
             if (channels == null)
             { channels = new List<Model.Channel>(); }
             channels.ForEach(a =>
@@ -37,7 +38,8 @@ namespace Webs.WebProvider
         }
         public ActionResult List()
         {
-            var channels = ChannelProvider.Intance.GetAllList();
+
+            var channels = ChannelProvider.Intance.GetAllList(_siteId);
             if (channels == null)
             { channels = new List<Model.Channel>(); }
             int lableCount = 0;
@@ -49,7 +51,7 @@ namespace Webs.WebProvider
         }
         public ActionResult Detail(int id)
         {
-            var channels = ChannelProvider.Intance.GetAllList();
+            var channels = ChannelProvider.Intance.GetAllList(_siteId);
             if (channels == null)
             { channels = new List<Model.Channel>(); }
             int lableCount = 0;
