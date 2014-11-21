@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Webs.Dao;
+using Webs.Model;
 
 namespace Webs.Provider
 {
@@ -9,19 +11,23 @@ namespace Webs.Provider
     {
         private static InfoProvider _instance = new InfoProvider();
 
-        public static InfoProvider Instance
+        internal static InfoProvider Instance
         {
             get { return InfoProvider._instance; }           
         }
 
-        internal List<Model.Info> GetListByChannelId(int channelId)
+        internal OperationResult<List<Info>> GetListByChannelId(int channelId)
         {
-            throw new NotImplementedException();
+            List<Info> list = InfoDao.GetListByChannelId(channelId);
+            var result = new OperationResult<List<Info>>(list, (list == null));
+            return result;
         }
 
-        internal Model.Info GetInfoById(int id)
+        internal OperationResult<Info> GetInfoById(int id)
         {
-            throw new NotImplementedException();
+            Info list = InfoDao.GetInfoById(id);
+            var result = new OperationResult<Info>(list, (list == null));
+            return result;
         }
     }
 }

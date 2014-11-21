@@ -49,6 +49,8 @@
     <Compile Include="Controller\CurrentUser.cs" />
     <Compile Include="Controller\DefineTable.cs" />
     <Compile Include="Controller\UserAttribute.cs" />
+    <Compile Include="Dao\ChannelDao.cs" />
+    <Compile Include="Dao\InfoDao.cs" />
     <Compile Include="Dao\WebUserDao.cs" />
     <Compile Include="Model\Channel.cs" />
     <Compile Include="Model\GridPage.cs" />

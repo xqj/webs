@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Webs.Dao;
 using Webs.Model;
 
 namespace Webs.Provider
@@ -10,19 +11,23 @@ namespace Webs.Provider
     {
         private static ChannelProvider _intance = new ChannelProvider();
 
-        public static ChannelProvider Intance
+        internal static ChannelProvider Intance
         {
             get { return ChannelProvider._intance; }           
         }
 
-        internal List<Channel> GetShowIndexChannels(int channelCount,int siteId)
+        internal OperationResult<List<Channel>> GetShowIndexChannels(int channelCount,int siteId)
         {
-            throw new NotImplementedException();
+            List<Channel> list = ChannelDao.GetShowIndexChannels(channelCount, siteId);
+            var result = new OperationResult<List<Channel>>(list,(list == null));
+            return result;
         }
 
-        internal List<Channel> GetAllList(int siteId)
+        internal OperationResult<List<Channel>> GetAllList(int siteId)
         {
-            throw new NotImplementedException();
+            List<Channel> list = ChannelDao.GetAllList(siteId);
+            var result = new OperationResult<List<Channel>>(list, (list == null));
+            return result;
         }
     }
 }

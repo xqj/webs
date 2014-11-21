@@ -24,12 +24,14 @@ namespace Webs.Model
          {
              Data = data;
              m_Result = result;
+             if (!result)
              Code = DefaultConfig.DefaultResultCode;
              Message = DefaultConfig.DefaultMessage;
          }
          public OperationResult(bool result)
          {
              m_Result = result;
+             if(!result)
              Code = DefaultConfig.DefaultResultCode;
              Message = DefaultConfig.DefaultMessage;
          }
