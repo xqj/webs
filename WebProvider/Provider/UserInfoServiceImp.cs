@@ -5,15 +5,15 @@ using System.Text;
 using Webs.Dao;
 using Webs.Model;
 
-namespace Webs.WebProvider.Provider
+namespace Webs.Provider
 {
-   public class UserInfoServiceImp
+   public class UserInfoProvider
     {
-        private static UserInfoServiceImp _instance = new UserInfoServiceImp();
+       private static UserInfoProvider _instance = new UserInfoProvider();
 
-        public static UserInfoServiceImp Instance
+       public static UserInfoProvider Instance
         {
-            get { return UserInfoServiceImp._instance; }        
+            get { return _instance; }        
         }
         public OperationResult<UserInfo> GetUser(int userId)
         {

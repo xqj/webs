@@ -7,15 +7,15 @@ using Webs.Model;
 
 namespace Webs.Provider
 {
-   public class SecurityServiceImp
+   public class SecurityProvider
     {
-        private static SecurityServiceImp _instance = new SecurityServiceImp();
+       private static SecurityProvider _instance = new SecurityProvider();
 
-        public static SecurityServiceImp Instance
+        public static SecurityProvider Instance
         {
-            get { return SecurityServiceImp._instance; }         
+            get { return _instance; }         
         }
-        public SecurityServiceImp()
+        public SecurityProvider()
         {
 
         }
@@ -50,6 +50,22 @@ namespace Webs.Provider
                 result.Message = "用户名或密码错误";
             }
             return result;
+        }
+        public OperationResult<UserInfo> GetCurrentUser(string cookieVal)
+        {
+            if (!string.IsNullOrEmpty(cookieVal))
+            {
+                string[] strArr = cookieVal.Split('&');
+                if (strArr.Length == 3)
+                {
+                    int userId =0;
+                    int.TryParse(strArr[1],out userId);
+                   return UserInfoProvider.Instance.GetUser(userId);
+                }
+            }
+            return new OperationResult<UserInfo>() { 
+            Message="无法获取当前用户信息"
+            };
         }
     }
 }
