@@ -7,7 +7,7 @@ using System.Web;
 using Webs.Model;
 using Webs.Provider;
 
-namespace Webs.WebProvider.Controller
+namespace Webs.WebProvider
 {
    public class CurrentUser
     {

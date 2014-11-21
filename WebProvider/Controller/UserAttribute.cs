@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Webs.Provider;
 
-namespace Webs.WebProvider.Controller
+namespace Webs.WebProvider
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class UserSecurityAttribute : ActionFilterAttribute

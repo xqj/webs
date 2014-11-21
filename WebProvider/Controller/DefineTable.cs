@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Webs.WebProvider.Controller
+namespace Webs.WebProvider
 {
    internal class DefineTable
     {
