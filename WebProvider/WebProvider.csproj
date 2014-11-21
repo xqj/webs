@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\WebUserDao.cs" />
     <Compile Include="Model\Channel.cs" />
     <Compile Include="Model\GridPage.cs" />
     <Compile Include="Model\Info.cs" />
@@ -59,10 +60,15 @@
     <Compile Include="Provider\ChannelServiceImp.cs" />
     <Compile Include="Provider\InfoServiceImp.cs" />
     <Compile Include="Provider\LableServiceImp.cs" />
+    <Compile Include="Provider\SecurityServiceImp.cs" />
+    <Compile Include="Provider\UserInfoServiceImp.cs" />
     <Compile Include="ViewModel\ChannelView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dao\" />
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{b285a545-5314-4ece-97f4-08e89d88a9af}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
