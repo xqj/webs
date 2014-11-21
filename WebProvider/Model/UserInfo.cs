@@ -14,7 +14,7 @@ namespace Webs.Model
         [DataMember]
         public string LoginName { set; get; }
         [DataMember]
-        public string pwd { set; get; }
+        public string Pwd { set; get; }
         [DataMember]
         public string UserName { set; get; }
         [DataMember]
