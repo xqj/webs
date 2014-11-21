@@ -19,5 +19,7 @@ namespace Webs.Model
         public bool IsShowIndex { set; get; }
         [DataMember]
         public int IndexShowSort { set; get; }
+          [DataMember]
+        public int SiteId { set; get; }
     }
 }

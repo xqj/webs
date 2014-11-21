@@ -33,6 +33,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -50,7 +54,10 @@
     <Compile Include="Controller\DefineTable.cs" />
     <Compile Include="Controller\UserAttribute.cs" />
     <Compile Include="Dao\ChannelDao.cs" />
+    <Compile Include="Dao\DefineTable.cs" />
     <Compile Include="Dao\InfoDao.cs" />
+    <Compile Include="Dao\LableDao.cs" />
+    <Compile Include="Dao\MysqlHelper.cs" />
     <Compile Include="Dao\WebUserDao.cs" />
     <Compile Include="Model\Channel.cs" />
     <Compile Include="Model\GridPage.cs" />

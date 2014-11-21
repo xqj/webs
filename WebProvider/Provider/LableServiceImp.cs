@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Webs.Dao;
 using Webs.Model;
 
 namespace Webs.Provider
@@ -15,9 +16,11 @@ namespace Webs.Provider
             get { return LableProvider._instance; }          
         }
 
-        internal List<Lable> GetShowIndexLables(int lableCount)
+        internal OperationResult<List<Lable>> GetShowIndexLables(int lableCount)
         {
-            throw new NotImplementedException();
+            List<Lable> list = LableDao.GetShowIndexLables(lableCount);
+            var result = new OperationResult<List<Lable>>(list, (list == null));
+            return result;
         }
     }
 }
