@@ -13,7 +13,7 @@ namespace Webs.Provider
 
         internal static ChannelProvider Intance
         {
-            get { return ChannelProvider._intance; }           
+            get { return _intance; }           
         }
 
         internal OperationResult<List<Channel>> GetShowIndexChannels(int channelCount,int siteId)
