@@ -11,7 +11,31 @@ namespace Webs.Dao
     {
         internal static List<Lable> GetShowIndexLables(int lableCount)
         {
-            throw new NotImplementedException();
+            List<Lable> list = new List<Model.Lable>();
+            StringBuilder sqlCmd = new StringBuilder("select * from Lable limit ");
+            sqlCmd.Append(lableCount.ToString());
+            sqlCmd.Append(" where IsDelete=0 and Enable=1 and IsShowIndex=1 order by IndexShowSort asc");
+            using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
+            {
+                while (dr.Read())
+                {
+                    Lable data = new Lable()
+                    {
+                        LableId = dr.GetInt32("LableId"),
+                        LableName = dr["LableName"].ToString(),
+                        CreateBy = dr.GetInt32("CreateBy"),
+                        CreateTime = dr.GetDateTime("CreateTime"),
+                        Enable = dr.GetBoolean("Enable"),
+                        IndexShowSort = dr.GetInt32("IndexShowSort"),
+                        IsShowIndex = dr.GetBoolean("IsShowIndex"),
+                        ModifyBy = dr.GetInt32("ModifyBy"),
+                        ModifyTime = dr.GetDateTime("ModifyTime"),                        
+                    };
+                    list.Add(data);
+                }
+            }
+            if (list.Count == 0) list = null;
+            return list;
         }
     }
 }

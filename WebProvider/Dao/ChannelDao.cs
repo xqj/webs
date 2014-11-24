@@ -16,8 +16,9 @@ namespace Webs.Dao
             List<Channel> list = new List<Model.Channel>();
             StringBuilder sqlCmd = new StringBuilder("select * from Channel limit ");
             sqlCmd.Append(channelCount.ToString());
-            sqlCmd.Append(" where IsDelete=0 and Enable=1 and SiteId=");
+            sqlCmd.Append(" where IsDelete=0 and Enable=1 and IsShowIndex=1 and SiteId=");
             sqlCmd.Append(siteId.ToString());
+            sqlCmd.Append(" order by IndexShowSort asc");
             using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
             {
                 while (dr.Read())
