@@ -20,18 +20,18 @@ namespace Webs.WebProvider
             Dictionary<int, ChannelView> blockData = new Dictionary<int, ChannelView>();
             int channelCount = 0;
             var channels = ChannelProvider.Intance.GetShowIndexChannels(channelCount, _siteId);
-            if (channels == null)
-            { channels = new List<Model.Channel>(); }
-            channels.ForEach(a =>
+            if (channels.Result)
+            { channels.Data = new List<Model.Channel>(); }
+            channels.Data.ForEach(a =>
             {
                 var view = (ChannelView)a;
-                view.ChannelContent = InfoProvider.Instance.GetListByChannelId(a.ChannelId);
+                view.ChannelContent = InfoProvider.Instance.GetListByChannelId(a.ChannelId).Data;
                 blockData.Add(a.ChannelId, view);
             });
 
             int lableCount = 0;
             var labels = LableProvider.Instance.GetShowIndexLables(lableCount);
-            if (labels == null) labels = new List<Model.Lable>();
+            if (labels.Result) labels.Data = new List<Model.Lable>();
             ViewData["channelsData"] = channels;
             ViewData["labelsData"] = labels;
             return View();
@@ -40,11 +40,11 @@ namespace Webs.WebProvider
         {
 
             var channels = ChannelProvider.Intance.GetAllList(_siteId);
-            if (channels == null)
-            { channels = new List<Model.Channel>(); }
+            if (channels.Result)
+            { channels.Data = new List<Model.Channel>(); }
             int lableCount = 0;
             var labels = LableProvider.Instance.GetShowIndexLables(lableCount);
-            if (labels == null) labels = new List<Model.Lable>();
+            if (labels == null) labels.Data = new List<Model.Lable>();
             ViewData["channelsData"] = channels;
             ViewData["labelsData"] = labels;
             return View();
@@ -52,14 +52,14 @@ namespace Webs.WebProvider
         public ActionResult Detail(int id)
         {
             var channels = ChannelProvider.Intance.GetAllList(_siteId);
-            if (channels == null)
-            { channels = new List<Model.Channel>(); }
+            if (channels.Result)
+            { channels.Data = new List<Model.Channel>(); }
             int lableCount = 0;
             var labels = LableProvider.Instance.GetShowIndexLables(lableCount);
-            if (labels == null) labels = new List<Model.Lable>();
-            Info info = InfoProvider.Instance.GetInfoById(id);
-            ViewData["channelsData"] = channels;
-            ViewData["labelsData"] = labels;
+            if (labels.Result) labels.Data = new List<Model.Lable>();
+            var info = InfoProvider.Instance.GetInfoById(id);
+            ViewData["channelsData"] = channels.Data;
+            ViewData["labelsData"] = labels.Data;
             return View(info);
         }
     }

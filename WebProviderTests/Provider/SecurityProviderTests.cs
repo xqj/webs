@@ -13,7 +13,9 @@ namespace Webs.Provider.Tests
         [TestMethod()]
         public void LoginTest()
         {
-            Assert.Fail();
+            var r = SecurityProvider.Instance.Login("wind", "123456");
+            Assert.IsTrue(r.Result);
+            Assert.IsNotNull(r.Data);
         }
     }
 }

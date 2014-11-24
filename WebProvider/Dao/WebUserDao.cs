@@ -30,7 +30,7 @@ namespace Webs.Dao
                     };
                 }
             }
-              return null;
+              return data;
         }
 
        internal static UserInfo GetUserById(int userId)
@@ -60,7 +60,7 @@ namespace Webs.Dao
                    };
                }
            }
-           return null;
+           return data;
        }
     }
 }
