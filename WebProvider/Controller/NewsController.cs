@@ -48,6 +48,7 @@ namespace Webs.WebProvider
             ViewData["labelsData"] = labels.Data;
             return View();
         }
+       
         public ActionResult Detail(int id)
         {
             var channels = ChannelProvider.Intance.GetAllList(_siteId);

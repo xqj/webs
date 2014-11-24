@@ -22,12 +22,22 @@ namespace Webs.Provider
             var result = new OperationResult<List<Info>>(list, (list == null));
             return result;
         }
-
+        internal OperationResult<List<Info>> GetTopListByChannelId(int channelId,int total)
+        {
+            List<Info> list = InfoDao.GetListByChannelId(channelId, total);
+            var result = new OperationResult<List<Info>>(list, (list == null));
+            return result;
+        }
         internal OperationResult<Info> GetInfoById(int id)
         {
             Info list = InfoDao.GetInfoById(id);
             var result = new OperationResult<Info>(list, (list == null));
             return result;
+        }
+
+        internal GridPage<Info> GetPager(int pageSize, int pageCurrentIndex,int channelId)
+        {
+            return InfoDao.GetPager(pageSize, pageCurrentIndex, channelId);
         }
     }
 }

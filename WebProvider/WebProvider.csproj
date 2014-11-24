@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AdminController.cs" />
     <Compile Include="Controller\CurrentUser.cs" />
     <Compile Include="Controller\DefineTable.cs" />
     <Compile Include="Controller\UserAttribute.cs" />

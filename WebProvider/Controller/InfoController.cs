@@ -15,7 +15,7 @@ namespace Webs.WebProvider
         //
         // GET: /Info/
 
-        public ActionResult Index()
+        public ActionResult Index(int channelTotal)
         {
             Dictionary<int, ChannelView> blockData = new Dictionary<int, ChannelView>();
             int channelCount = 0;
@@ -25,7 +25,7 @@ namespace Webs.WebProvider
             channels.Data.ForEach(a =>
             {
                 var view = (ChannelView)a;
-                view.ChannelContent = InfoProvider.Instance.GetListByChannelId(a.ChannelId).Data;
+                view.ChannelContent = InfoProvider.Instance.GetTopListByChannelId(a.ChannelId, channelTotal).Data;
                 blockData.Add(a.ChannelId, view);
             });
 
@@ -34,20 +34,26 @@ namespace Webs.WebProvider
             if (labels.Result) labels.Data = new List<Model.Lable>();
             ViewData["channelsData"] = channels;
             ViewData["labelsData"] = labels;
-            return View();
+            return View(blockData);
         }
         public ActionResult List()
         {
-
             var channels = ChannelProvider.Intance.GetAllList(_siteId);
             if (channels.Result)
-            { channels.Data = new List<Model.Channel>(); }
+            { channels.Data = new List<Model.Channel>(); }           
             int lableCount = 0;
             var labels = LableProvider.Instance.GetShowIndexLables(lableCount);
-            if (labels == null) labels.Data = new List<Model.Lable>();
+            if (labels == null) labels.Data = new List<Model.Lable>();         
             ViewData["channelsData"] = channels;
             ViewData["labelsData"] = labels;
             return View();
+        }
+        [HttpPost]
+        public ActionResult InfoPager(int pageSize,int pageCurrentIndex,int channelId)
+        {
+            List<Info> datas = new List<Info>();
+            var infos = InfoProvider.Instance.GetPager(pageSize, pageCurrentIndex, channelId);
+            return Json(datas);
         }
         public ActionResult Detail(int id)
         {

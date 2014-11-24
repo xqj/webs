@@ -7,21 +7,23 @@ using System.Web;
 using System.Web.Mvc;
 using Webs.Provider;
 
+
 namespace Webs.WebProvider
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public class UserSecurityAttribute : ActionFilterAttribute
-    {
-        public override void OnActionExecuting(ActionExecutingContext filterContext)
+    public class UserSecurityAttribute : ActionFilterAttribute, IAuthorizationFilter
+    {      
+
+        public void OnAuthorization(AuthorizationContext filterContext)
         {
             HttpCookie cookie = HttpContext.Current.Request.Cookies[DefineTable.LoginCookieName];
             bool isLogin = false;
-            if (cookie!= null)
+            if (cookie != null)
             {
-                isLogin=SecurityProvider.Instance.isLogin(cookie.Value);
+                isLogin = SecurityProvider.Instance.isLogin(cookie.Value);
             }
-            if(!isLogin)
-            HttpContext.Current.Response.Redirect("~/Error.aspx", true);
+            if (!isLogin)
+                HttpContext.Current.Response.Redirect("~/Error.aspx", true);
         }
     }
 }
