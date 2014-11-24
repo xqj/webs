@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsWeb", "News\NewsWeb.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProviderTests", "WebProviderTests\WebProviderTests.csproj", "{1256441B-7770-4D54-9BCC-EC5EE58756DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OP", "OP\OP.csproj", "{4F01697E-FDB1-4772-A075-6E22B4729B3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{1256441B-7770-4D54-9BCC-EC5EE58756DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1256441B-7770-4D54-9BCC-EC5EE58756DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1256441B-7770-4D54-9BCC-EC5EE58756DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F01697E-FDB1-4772-A075-6E22B4729B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F01697E-FDB1-4772-A075-6E22B4729B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F01697E-FDB1-4772-A075-6E22B4729B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F01697E-FDB1-4772-A075-6E22B4729B3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
