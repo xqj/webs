@@ -15,7 +15,7 @@ namespace Webs.WebProvider
        {
             HttpCookie cookie = HttpContext.Current.Request.Cookies[DefineTable.LoginCookieName];
             if (cookie != null)
-                return SecurityProvider.Instance.GetCurrentUser(cookie.Value);
+                return SecurityProvider.Instance.GetCurrentUser(HttpUtility.UrlDecode(cookie.Value));
             return new OperationResult<UserInfo>();
        }
        public static UserInfo GetSafeCurrentUser()
@@ -23,11 +23,19 @@ namespace Webs.WebProvider
            HttpCookie cookie = HttpContext.Current.Request.Cookies[DefineTable.LoginCookieName];
            if (cookie != null)
            {
-               var info = SecurityProvider.Instance.GetCurrentUser(cookie.Value);
+               var info = SecurityProvider.Instance.GetCurrentUser(HttpUtility.UrlDecode(cookie.Value));
                if (info.Result)
                    return info.Data;
            }
            return new UserInfo();
+       }
+
+       internal static void SetCookie(UserInfo userInfo)
+       {
+           HttpCookie cookie = new HttpCookie(DefineTable.LoginCookieName);
+           cookie.HttpOnly = true;
+           cookie.Value =HttpUtility.UrlEncode(userInfo.UserId.ToString() + "&" + System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(userInfo.UserId.ToString(), "MD5"));
+           HttpContext.Current.Response.SetCookie(cookie);
        }
     }
 }

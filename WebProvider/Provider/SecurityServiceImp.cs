@@ -19,6 +19,11 @@ namespace Webs.Provider
         {
 
         }
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="cookieVal"></param>
+       /// <returns></returns>
         public bool isLogin(string cookieVal)
         {
             if (!string.IsNullOrEmpty(cookieVal)) {
@@ -37,7 +42,12 @@ namespace Webs.Provider
         }
         public OperationResult<UserInfo> Login(string loginName,string pwd)
         {
+
             var result = new OperationResult<UserInfo>();
+            if ((string.IsNullOrEmpty(loginName)) || (loginName.Length > 4)) {
+                result.Message = "非法数据";
+                return result; }
+            //pwd = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(pwd, "MD5");
             var user=WebUserDao.Login(loginName, pwd);
             if (user != null)
             {

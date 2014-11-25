@@ -20,7 +20,7 @@ namespace Webs.WebProvider
             Dictionary<int, ChannelView> blockData = new Dictionary<int, ChannelView>();
             int channelCount = 0;
             var channels = ChannelProvider.Intance.GetShowIndexChannels(channelCount, _siteId);
-            if (channels.Result)
+            if (!channels.Result)
             { channels.Data = new List<Model.Channel>(); }
             channels.Data.ForEach(a =>
             {
@@ -39,7 +39,7 @@ namespace Webs.WebProvider
         public ActionResult List()
         {
             var channels = ChannelProvider.Intance.GetAllList(_siteId);
-            if (channels.Result)
+               if (!channels.Result)
             { channels.Data = new List<Model.Channel>(); }           
             int lableCount = 0;
             var labels = LableProvider.Instance.GetShowIndexLables(lableCount);
@@ -58,7 +58,7 @@ namespace Webs.WebProvider
         public ActionResult Detail(int id)
         {
             var channels = ChannelProvider.Intance.GetAllList(_siteId);
-            if (channels.Result)
+               if (!channels.Result)
             { channels.Data = new List<Model.Channel>(); }
             int lableCount = 0;
             var labels = LableProvider.Instance.GetShowIndexLables(lableCount);

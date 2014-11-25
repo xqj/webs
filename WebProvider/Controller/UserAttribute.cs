@@ -20,10 +20,10 @@ namespace Webs.WebProvider
             bool isLogin = false;
             if (cookie != null)
             {
-                isLogin = SecurityProvider.Instance.isLogin(cookie.Value);
+                isLogin = SecurityProvider.Instance.isLogin(HttpUtility.UrlDecode(cookie.Value));
             }
             if (!isLogin)
-                HttpContext.Current.Response.Redirect("~/Error.aspx", true);
+                HttpContext.Current.Response.Redirect("~/404.aspx", true);
         }
     }
 }

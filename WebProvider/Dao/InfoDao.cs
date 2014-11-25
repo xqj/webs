@@ -112,7 +112,7 @@ namespace Webs.Dao
             sqlCmd.Append(channelId.ToString());
             sqlCmd.Append(" order by ShowSort desc");
             sqlCmd.Append(" limit ");
-            sqlCmd.Append((pageCurrentIndex * pageSize - 1).ToString() + "," + pageSize.ToString());
+            sqlCmd.Append((pageCurrentIndex * (pageSize - 1)).ToString() + "," + pageSize.ToString());
             using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
             {
                 while (dr.Read())

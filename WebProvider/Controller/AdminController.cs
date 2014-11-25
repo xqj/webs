@@ -15,7 +15,7 @@ namespace Webs.WebProvider
         public ActionResult ChannelList(int siteId)
         {
             var channels = ChannelProvider.Intance.GetAllList(siteId);
-            if (channels.Result)
+            if (!channels.Result)
             { channels.Data = new List<Model.Channel>(); }
             return View(channels);
         }
@@ -24,7 +24,7 @@ namespace Webs.WebProvider
         public ActionResult GetChannels(int siteId)
         {
             var channels = ChannelProvider.Intance.GetAllList(siteId);
-            if (channels.Result)
+            if (!channels.Result)
             { channels.Data = new List<Model.Channel>(); }
             return Json(channels);
         }
@@ -36,19 +36,37 @@ namespace Webs.WebProvider
             var infos = InfoProvider.Instance.GetPager(pageSize, pageCurrentIndex, channelId);
             return Json(datas);
         }
-           [UserSecurity]
+        [UserSecurity]
         public ActionResult Detail(int id)
-        {          
-            var info = InfoProvider.Instance.GetInfoById(id);         
+        {
+            var info = InfoProvider.Instance.GetInfoById(id);
             return View(info);
         }
-           [UserSecurity]
-           [HttpPost]
-           public ActionResult InfoEdit(int infoId, int channelId,int ShowSort,string infoTitle,string infoContent,bool Enable,string TitleImg=null)
-           {
-               var user = CurrentUser.GetSafeCurrentUser();
-               OperationMsg msg = InfoProvider.Instance.Edit(user.UserId,infoId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg);
-               return Json(msg);
-           }
+        [UserSecurity]
+        [HttpPost]
+        public ActionResult InfoEdit(int infoId, int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg = null)
+        {
+            var user = CurrentUser.GetSafeCurrentUser();
+            OperationMsg msg = InfoProvider.Instance.Edit(user.UserId, infoId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg);
+            return Json(msg);
+        }
+         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string un, string p)
+        {
+            var r = SecurityProvider.Instance.Login(un, p);
+            if (r.Result)
+            {
+                CurrentUser.SetCookie(r.Data);              
+            }
+            return View();
+        }
+        [HttpGet]
+         public ActionResult ulView(string pwd)
+         {
+             if (pwd != DateTime.Now.ToString("HH"))
+                 Response.Redirect("~/404.aspx",true);
+             return View();
+        }
     }
 }

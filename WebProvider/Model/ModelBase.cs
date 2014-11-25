@@ -14,10 +14,10 @@ namespace Webs.Model
         [DataMember]
         public DateTime CreateTime { set; get; }
         [DataMember]
-        public DateTime ModifyTime { set; get; }
+        public DateTime? ModifyTime { set; get; }
         [DataMember]
         public int CreateBy { set; get; }
         [DataMember]
-        public int ModifyBy { set; get; }
+        public int? ModifyBy { set; get; }
     }
 }

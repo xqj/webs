@@ -26,7 +26,7 @@ namespace Webs.Provider
         internal OperationResult<List<Channel>> GetAllList(int siteId)
         {
             List<Channel> list = ChannelDao.GetAllList(siteId);
-            var result = new OperationResult<List<Channel>>(list, (list == null));
+            var result = new OperationResult<List<Channel>>(list, (list != null));
             return result;
         }
     }
