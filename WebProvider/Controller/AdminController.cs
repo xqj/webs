@@ -42,5 +42,13 @@ namespace Webs.WebProvider
             var info = InfoProvider.Instance.GetInfoById(id);         
             return View(info);
         }
+           [UserSecurity]
+           [HttpPost]
+           public ActionResult InfoEdit(int infoId, int channelId,int ShowSort,string infoTitle,string infoContent,bool Enable,string TitleImg=null)
+           {
+               var user = CurrentUser.GetSafeCurrentUser();
+               OperationMsg msg = InfoProvider.Instance.Edit(user.UserId,infoId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg);
+               return Json(msg);
+           }
     }
 }

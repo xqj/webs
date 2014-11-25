@@ -65,6 +65,7 @@
     <Compile Include="Model\Info.cs" />
     <Compile Include="Model\Lable.cs" />
     <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Model\OperationMsg.cs" />
     <Compile Include="Model\OperationResult.cs" />
     <Compile Include="Model\OperationResultCodeType.cs" />
     <Compile Include="Model\UserInfo.cs" />

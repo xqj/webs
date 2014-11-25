@@ -39,5 +39,14 @@ namespace Webs.Provider
         {
             return InfoDao.GetPager(pageSize, pageCurrentIndex, channelId);
         }
+
+        internal OperationMsg Edit(int userId,int infoId, int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg)
+        {
+            var result = new OperationMsg();
+            if (infoId > 0)
+                return new OperationMsg(InfoDao.Edit(userId, infoId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg));
+            else
+                return new OperationMsg(InfoDao.Insert(userId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg)>0);
+        }
     }
 }

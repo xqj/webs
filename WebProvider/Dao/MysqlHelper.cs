@@ -20,6 +20,16 @@ namespace Webs.Dao
             con.Open();
             return cmd.ExecuteReader();
         }
-      
+        internal static int ExecuteNonQuery(string sqlCmd)
+        {
+            MySqlConnection con = new MySqlConnection(WebConfigHelper.GetConfig(DefineTable.DatabaseConstr));
+            MySqlCommand cmd = new MySqlCommand(sqlCmd);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            con.Open();
+            int rows=cmd.ExecuteNonQuery();
+            con.Close();
+            return rows;
+        }
     }
 }
