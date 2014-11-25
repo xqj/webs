@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Webs.Model.OperationResult<Webs.Model.Info>
+@{
     Layout = null;
 }
 
@@ -11,7 +12,17 @@
 </head>
 <body>
     <div>
-        
+        @{Html.BeginForm("InfoEdit", "Admin");}
+        @Html.AntiForgeryToken()
+        <div>标题:<input id="InfoId" type="hidden" name="InfoId" value="@Model.Data.InfoId"></div>
+        <div>标题:<input id="InfoTitle" type="text" name="InfoTitle" value="@Model.Data.InfoTitle"></div>
+        <div>内容:<textarea id="InfoContent" name="InfoContent" >@Model.Data.InfoContent</textarea></div>
+        <div>栏目id:<input id="channelId" type="text" name="title" value="0"></div>
+        <div>排序:<input id="ShowSort" type="text" name="ShowSort" value="@Model.Data.ShowSort"></div>
+        <div>首页图:<input id="TitleImg" type="text" name="TitleImg" value="@Model.Data.TitleImg"></div>
+        <div>启用:<input id="Enable" type="checkbox" name="Enable" checked="checked"></div>
+        <input type="submit" id="submit" value="提交"/>
+        @{Html.EndForm();}
     </div>
 </body>
 </html>
