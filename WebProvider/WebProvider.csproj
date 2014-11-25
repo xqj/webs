@@ -55,6 +55,7 @@
     <Compile Include="Controller\DefineTable.cs" />
     <Compile Include="Controller\UserAttribute.cs" />
     <Compile Include="Dao\ChannelDao.cs" />
+    <Compile Include="Dao\Channel_Info_RelationDao.cs" />
     <Compile Include="Dao\DefineTable.cs" />
     <Compile Include="Dao\InfoDao.cs" />
     <Compile Include="Dao\LableDao.cs" />

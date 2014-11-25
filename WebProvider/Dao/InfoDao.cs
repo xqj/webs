@@ -96,6 +96,7 @@ namespace Webs.Dao
                     };
                     list.Add(data);
                 }
+              
             }
             if (list.Count == 0) list = null;
             return list;
@@ -112,7 +113,7 @@ namespace Webs.Dao
             sqlCmd.Append(channelId.ToString());
             sqlCmd.Append(" order by ShowSort desc");
             sqlCmd.Append(" limit ");
-            sqlCmd.Append((pageCurrentIndex * (pageSize - 1)).ToString() + "," + pageSize.ToString());
+            sqlCmd.Append(((pageCurrentIndex-1) * pageSize).ToString() + "," + pageSize.ToString());
             using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
             {
                 while (dr.Read())

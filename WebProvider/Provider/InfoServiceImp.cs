@@ -46,7 +46,14 @@ namespace Webs.Provider
             if (infoId > 0)
                 return new OperationMsg(InfoDao.Edit(userId, infoId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg));
             else
-                return new OperationMsg(InfoDao.Insert(userId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg)>0);
+            {
+                int id=InfoDao.Insert(userId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg);
+                if (id > 0)
+                {
+                    Channel_Info_RelationDao.Insert(id, channelId);
+                }
+                return new OperationMsg(id > 0);
+            }
         }
     }
 }
