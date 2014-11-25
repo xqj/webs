@@ -32,9 +32,8 @@ namespace Webs.WebProvider
         [HttpPost]
         public ActionResult InfoPager(int pageSize, int pageCurrentIndex, int channelId)
         {
-            List<Info> datas = new List<Info>();
-            var infos = InfoProvider.Instance.GetPager(pageSize, pageCurrentIndex, channelId);
-            return Json(datas);
+             var infos = InfoProvider.Instance.GetPager(pageSize, pageCurrentIndex, channelId);
+            return Json(infos);
         }
         [UserSecurity]
         public ActionResult Detail(int id)
