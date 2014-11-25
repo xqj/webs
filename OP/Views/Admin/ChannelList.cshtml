@@ -1,0 +1,48 @@
+﻿@model Webs.Model.OperationResult<List<Webs.Model.Channel>>
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChannelList</title>
+</head>
+<body>
+    <ul>
+        @if (Model.Result)
+{
+    foreach (var k in Model.Data)
+    {
+        <li id='c@(k.ChannelId)' vl='@(k.ChannelId)' class="cn">@k.ChannelName</li>
+    }
+}
+    </ul>
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script>       
+        $(".cn").click(function () {
+            var url='@Html.ActionLink("$1", "Detail")';
+            $.post('@Url.Action("InfoPager")', { "pageSize":10,"pageCurrentIndex":1,"channelId":$(this).attr("vl") }, function (data) {
+                if (data.List) {
+                    $("#infolist").html("");
+                    for(var i=0;i<data.List.length;i++){
+                        $("#infolist").append(url.replace("$1",data.List[i].InfoTitle));
+                    }
+                }
+            }, "json");
+        });
+    </script>
+    <div>
+        <ul id="infolist">
+           
+        </ul>
+        <a id="pre" vl="1">上一页</a><a id="next" vl="1">下一页</a>
+        <script>
+
+        </script>
+    </div>
+</body>
+</html>

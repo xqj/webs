@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ulView</title>
+</head>
+<body>
+    <div>
+        @{Html.BeginForm("Login", "Admin");}
+        @Html.AntiForgeryToken()
+        <input type="text" id="un" name="un" value="" />
+        <input type="password" id="p" name="p" value="" />
+    <input type="submit" id="sl" name="sl" value="登录" />
+               @{Html.EndForm();}</div>
+</body>
+</html>
