@@ -33,6 +33,7 @@ namespace Webs.WebProvider
        internal static void SetCookie(UserInfo userInfo)
        {
            HttpCookie cookie = new HttpCookie(DefineTable.LoginCookieName);
+           cookie.Expires = DateTime.Now.AddDays(1);
            cookie.HttpOnly = true;
            cookie.Value =HttpUtility.UrlEncode(userInfo.UserId.ToString() + "&" + System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(userInfo.UserId.ToString(), "MD5"));
            HttpContext.Current.Response.SetCookie(cookie);

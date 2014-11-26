@@ -38,12 +38,13 @@ namespace Webs.WebProvider
         [UserSecurity]
         public ActionResult Detail(int id)
         {
-            var info = InfoProvider.Instance.GetInfoById(id);
+            var info = InfoProvider.Instance.GetAdminInfoById(id);
             return View(info);
         }
         [UserSecurity]
         [HttpPost]
-        public ActionResult InfoEdit(int infoId, int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg = null)
+        [ValidateInput(false)]
+       public ActionResult InfoEdit(int infoId, int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg = null)
         {
             var user = CurrentUser.GetSafeCurrentUser();
             OperationMsg msg = InfoProvider.Instance.Edit(user.UserId, infoId, channelId, ShowSort, infoTitle, infoContent, Enable, TitleImg);

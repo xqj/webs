@@ -55,5 +55,12 @@ namespace Webs.Provider
                 return new OperationMsg(id > 0);
             }
         }
+
+        internal OperationResult<Info> GetAdminInfoById(int id)
+        {
+            Info info = InfoDao.GetAdminInfoById(id);
+            var result = new OperationResult<Info>(info, (info == null));
+            return result;
+        }
     }
 }

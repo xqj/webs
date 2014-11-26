@@ -38,7 +38,7 @@ namespace Webs.Dao
            UserInfo data = null;
            StringBuilder sqlCmd = new StringBuilder("select * from WebUser where UserId=");
            sqlCmd.Append(userId.ToString());
-           sqlCmd.Append("' and IsDelete=0 and Enable=1");
+           sqlCmd.Append(" and IsDelete=0 and Enable=1");
            using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
            {
                if (dr.Read())

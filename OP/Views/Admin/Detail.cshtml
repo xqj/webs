@@ -9,20 +9,40 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Detail</title>
+    <link href="~/Scripts/umeditor/themes/default/css/umeditor.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/umeditor/umeditor.config.js"></script>
+    <script src="~/Scripts/umeditor/umeditor.js"></script>
+    <script src="~/Scripts/umeditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
     <div>
-        @{Html.BeginForm("InfoEdit", "Admin");}
-        @Html.AntiForgeryToken()
+       
         <div>标题:<input id="InfoId" type="hidden" name="InfoId" value="@Model.Data.InfoId"></div>
         <div>标题:<input id="InfoTitle" type="text" name="InfoTitle" value="@Model.Data.InfoTitle"></div>
-        <div>内容:<textarea id="InfoContent" name="InfoContent" >@Model.Data.InfoContent</textarea></div>
         <div>栏目id:<input id="channelId" type="text" name="title" value="0"></div>
+        <script type="text/plain" id="InfoContent" style="width: 750px; height: 400px;">
+            @Model.Data.InfoContent
+    </script>
         <div>排序:<input id="ShowSort" type="text" name="ShowSort" value="@Model.Data.ShowSort"></div>
         <div>首页图:<input id="TitleImg" type="text" name="TitleImg" value="@Model.Data.TitleImg"></div>
-        <div>启用:<input id="Enable" type="checkbox" name="Enable" checked="checked"></div>
-        <input type="submit" id="submit" value="提交"/>
-        @{Html.EndForm();}
+        <div>启用:<input id="sEnable" name="sEnable" type="checkbox" @if(@Model.Data.Enable){@("checked=\"checked\"")} value="0" /></div>
+        <input type="button" id="submit" value="提交" onclick="edit()" />
+      <script type="text/javascript">
+          var um = UM.getEditor('InfoContent');
+          function edit() {
+              var isEnable = $("#sEnable").attr("checked");
+              if (isEnable) isEnable = true; else isEnable=false;
+              $.post('@Url.Action("InfoEdit")', {
+                  "infoId": $("#InfoId").val(), "channelId": $("#channelId").val(), "ShowSort": $("#ShowSort").val(), "infoTitle": $("#InfoTitle").val(), "infoContent": UM.getEditor('InfoContent').getContent(), "Enable": isEnable, "TitleImg": $("#TitleImg").val()
+              }, function () {
+
+              }, "json");
+          }
+      </script>
+    </div>
+    <div>
+
     </div>
 </body>
 </html>

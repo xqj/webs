@@ -142,13 +142,13 @@ namespace Webs.Dao
 
         internal static bool Edit(int userId, int infoId, int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg)
         {
-            string sqlCmd = string.Format("update info set ShowSort={0},InfoTitle={1},InfoContent={2},TitleImg={3},Enable={4},ModifyTime=now(),ModifyBy={5} where InfoId={6}", ShowSort.ToString(), infoTitle, infoContent, TitleImg, Enable ? "1" : "0", userId.ToString(), infoId.ToString());
+            string sqlCmd = string.Format("update Info set ShowSort={0},InfoTitle='{1}',InfoContent='{2}',TitleImg='{3}',Enable={4},ModifyTime=now(),ModifyBy={5} where InfoId={6}", ShowSort.ToString(), infoTitle, infoContent, TitleImg, Enable ? "1" : "0", userId.ToString(), infoId.ToString());
            return MysqlHelper.ExecuteNonQuery(sqlCmd) > 0;
         }
 
         internal static int Insert(int userId,  int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg)
         {
-            string sqlCmd = string.Format("insert Info(ShowSort,InfoTitle,InfoContent,TitleImg,Enable,CreateTime,CreateBy) values({0},{1},{2},{3},{4},{5},{6});select mysql_insert_id();", ShowSort.ToString(), infoTitle, infoContent, TitleImg, Enable ? "1" : "0", "now()", userId);
+            string sqlCmd = string.Format("insert Info(ShowSort,InfoTitle,InfoContent,TitleImg,Enable,CreateTime,CreateBy) values({0},'{1}','{2}','{3}',{4},{5},{6});select mysql_insert_id();", ShowSort.ToString(), infoTitle, infoContent, TitleImg, Enable ? "1" : "0", "now()", userId);
              int  dataId = 0;
             using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
             {
@@ -158,6 +158,34 @@ namespace Webs.Dao
                 }
             }
             return dataId;
+        }
+
+        internal static Info GetAdminInfoById(int id)
+        {
+            StringBuilder sqlCmd = new StringBuilder("SELECT * FROM Info WHERE IsDelete=0 and InfoId =");
+            sqlCmd.Append(id.ToString());
+            Info data = null;
+            using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
+            {
+                if (dr.Read())
+                {
+                    data = new Info()
+                    {
+                        InfoContent = dr["InfoTitle"].ToString(),
+                        ShowSort = dr.GetInt32("ShowSort"),
+                        InfoId = dr.GetInt32("InfoId"),
+                        InfoTitle = dr["InfoTitle"].ToString(),
+                        CreateBy = dr.GetInt32("CreateBy"),
+                        CreateTime = dr.GetDateTime("CreateTime"),
+                        Enable = dr.GetBoolean("Enable"),
+                        ModifyBy = dr.GetInt32("ModifyBy"),
+                        ModifyTime = dr.GetDateTime("ModifyTime"),
+                        TitleImg = dr["TitleImg"].ToString(),
+
+                    };
+                }
+            }
+            return data;
         }
     }
 }
