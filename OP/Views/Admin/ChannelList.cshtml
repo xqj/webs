@@ -47,13 +47,17 @@
         <script>
             $("#next").click(function () {
                 var url = '@Html.ActionLink("$1", "Detail", new {id= "t2" })';
-                var pageIndex = parseInt($(this).attr("vl"));
-                $("#next").attr("vl", pageIndex++);
-                $.post('@Url.Action("InfoPager")', { "pageSize": 1, "pageCurrentIndex": pageIndex-1, "channelId": $(this).attr("vc") }, function (data) {                 
-                    if (data.List) {                        
+                var pageIndex = parseInt($(this).attr("vl"));               
+                $.post('@Url.Action("InfoPager")', { "pageSize": 1, "pageCurrentIndex": pageIndex, "channelId": $(this).attr("vc") }, function (data) {   
+                    pageIndex++
+                    $("#next").attr("vl", pageIndex);
+                    if ((data.List) && (data.List.length>0)) {
                         for (var i = 0; i < data.List.length; i++) {
                             $("#infolist").append(url.replace("$1", data.List[i].InfoTitle).replace("t2", data.List[i].InfoId));
                         }
+                    } else {
+                        pageIndex--
+                        $("#next").attr("vl", pageIndex);
                     }
                 }, "json");
                
