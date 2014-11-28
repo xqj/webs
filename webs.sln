@@ -11,12 +11,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "op", "op\op.csproj", "{F025
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTest", "MonoTest\MonoTest.csproj", "{DA38B0BA-2607-45A0-8DDB-604912C6FCBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWeb", "BlogWeb\BlogWeb.csproj", "{A088F63D-40E7-4003-967C-9769F4BF0872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyWeb", "CompanyWeb\CompanyWeb.csproj", "{38E325DF-D231-4A1D-BF4F-1338556994AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38E325DF-D231-4A1D-BF4F-1338556994AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E325DF-D231-4A1D-BF4F-1338556994AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E325DF-D231-4A1D-BF4F-1338556994AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E325DF-D231-4A1D-BF4F-1338556994AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A088F63D-40E7-4003-967C-9769F4BF0872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A088F63D-40E7-4003-967C-9769F4BF0872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A088F63D-40E7-4003-967C-9769F4BF0872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A088F63D-40E7-4003-967C-9769F4BF0872}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B285A545-5314-4ECE-97F4-08E89D88A9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B285A545-5314-4ECE-97F4-08E89D88A9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B285A545-5314-4ECE-97F4-08E89D88A9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
