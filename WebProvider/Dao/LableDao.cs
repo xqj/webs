@@ -12,9 +12,9 @@ namespace Webs.Dao
         internal static List<Lable> GetShowIndexLables(int lableCount)
         {
             List<Lable> list = new List<Model.Lable>();
-            StringBuilder sqlCmd = new StringBuilder("select * from Lable limit ");
-            sqlCmd.Append(lableCount.ToString());
-            sqlCmd.Append(" where IsDelete=0 and Enable=1 and IsShowIndex=1 order by IndexShowSort asc");
+            StringBuilder sqlCmd = new StringBuilder("select * from Lable");           
+			sqlCmd.Append(" where Enable=1 and IsShowIndex=1 order by IndexShowSort asc limit ");
+			sqlCmd.Append(lableCount.ToString());
             using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
             {
                 while (dr.Read())

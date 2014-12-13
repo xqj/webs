@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace BlogWeb.Areas.Info
+namespace Webs.WebProvider
 {
-    public class InfoAreaRegistration : AreaRegistration
+    public class meAreaRegistration : AreaRegistration
     {
         public override string AreaName
         {
             get
             {
-                return "Info";
+                return "me";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Info_default",
-                "Info/{controller}/{action}/{id}",
+                "me_default",
+                "me/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

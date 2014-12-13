@@ -1,0 +1,32 @@
+﻿div {
+    margin: 0px;
+    padding: 0px;
+   border-width:0px;
+}
+.logo{
+    
+}
+.columns{
+    float:left;
+  width:300px;
+}
+.clink{
+    color:#2c2c2c;
+       text-decoration:none;
+}
+.wlink{
+    color:#000000;
+       text-decoration:none;
+}
+.list{
+    float:left;
+    width:500px;
+}
+.moreBtn{
+    cursor:pointer;
+    font-size:13px;
+    text-align:right;
+ height:100px;
+     width:500px;
+     
+}

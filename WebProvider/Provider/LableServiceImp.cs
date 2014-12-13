@@ -19,7 +19,7 @@ namespace Webs.Provider
         internal OperationResult<List<Lable>> GetShowIndexLables(int lableCount)
         {
             List<Lable> list = LableDao.GetShowIndexLables(lableCount);
-            var result = new OperationResult<List<Lable>>(list, (list == null));
+            var result = new OperationResult<List<Lable>>(list, (list != null));
             return result;
         }
     }

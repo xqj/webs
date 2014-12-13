@@ -1,0 +1,47 @@
+﻿@model Dictionary<int, Webs.ViewModel.ChannelView>
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>hsieh chingjing的技术阵地</title>
+    <meta name="Keywords" content="互联网技术 无人化 智能硬件 大数据" />
+    <meta name="Description" content="hsieh chingjing个人技术阵地：基于C# net mono的分布式系统实现与运维技术、基于hadoop与storm的智能分析技术、基于互联网技术的无人化企业研究" />
+</head>
+<body>
+    <div class="logo"><h1> hsieh chingjing的技术阵地</h1><h5>技术理性派</h5></div>
+    <div class="columns">
+        <ul>
+            @{
+                foreach (var k in Model)
+                {
+                    <li><a target="_blank" href='@Url.Action("List")?cid=@k.Value.ChannelId' class="clink">@k.Value.ChannelName</a></li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="list">
+        @{
+            foreach (var k in Model)
+            {
+                <div>
+                    <h6>@k.Value.ChannelName</h6>
+                    @{
+                foreach (var n in k.Value.ChannelContent)
+                {
+                    <div>
+                        <a target="_blank" href="@Url.Action("Detail")?id=@n.InfoId" class="wlink">@n.InfoTitle</a>
+                        <span>@Webs.Common.StringHelper.GetString(n.InfoContent, 50)</span>
+                    </div>
+                }
+                    }
+                </div>
+            }
+        }
+       </div>
+        <link href="http://r.xieqj.net/css/b/i.css?v=5" rel="stylesheet" />
+
+</body>
+</html>

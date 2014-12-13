@@ -19,19 +19,19 @@ namespace Webs.Provider
         internal OperationResult<List<Info>> GetListByChannelId(int channelId)
         {
             List<Info> list = InfoDao.GetListByChannelId(channelId);
-            var result = new OperationResult<List<Info>>(list, (list == null));
+            var result = new OperationResult<List<Info>>(list, (list != null));
             return result;
         }
         internal OperationResult<List<Info>> GetTopListByChannelId(int channelId,int total)
         {
             List<Info> list = InfoDao.GetListByChannelId(channelId, total);
-            var result = new OperationResult<List<Info>>(list, (list == null));
+            var result = new OperationResult<List<Info>>(list, (list != null));
             return result;
         }
         internal OperationResult<Info> GetInfoById(int id)
         {
             Info list = InfoDao.GetInfoById(id);
-            var result = new OperationResult<Info>(list, (list == null));
+            var result = new OperationResult<Info>(list, (list != null));
             return result;
         }
 
@@ -59,7 +59,7 @@ namespace Webs.Provider
         internal OperationResult<Info> GetAdminInfoById(int id)
         {
             Info info = InfoDao.GetAdminInfoById(id);
-            var result = new OperationResult<Info>(info, (info == null));
+            var result = new OperationResult<Info>(info, (info != null));
             return result;
         }
     }

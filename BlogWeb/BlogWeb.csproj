@@ -71,13 +71,13 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Areas\" />
+    <Folder Include="Areas\me\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Info\InfoAreaRegistration.cs" />
-    <Compile Include="Areas\Resume\ResumeAreaRegistration.cs" />
+    <Compile Include="Areas\me\meAreaRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -87,15 +87,10 @@
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
-    <Content Include="Areas\Info\Views\Detail.cshtml" />
-    <Content Include="Areas\Info\Views\Index.cshtml" />
-    <Content Include="Areas\Info\Views\List.cshtml" />
-    <Content Include="Areas\Info\Views\Web.config" />
-    <Content Include="Areas\Resume\Views\Index.cshtml" />
-    <Content Include="Areas\Resume\Views\Projects.cshtml" />
-    <Content Include="Areas\Resume\Views\ResumeDetail.cshtml" />
-    <Content Include="Areas\Resume\Views\Skills.cshtml" />
-    <Content Include="Areas\Resume\Views\Web.config" />
+    <Content Include="Areas\me\Views\Web.config" />
+    <Content Include="Areas\me\Views\Info\Detail.cshtml" />
+    <Content Include="Areas\me\Views\Info\Index.cshtml" />
+    <Content Include="Areas\me\Views\Info\List.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -111,5 +106,4 @@
       <Name>WebProvider</Name>
     </ProjectReference>
   </ItemGroup>
- 
 </Project>
