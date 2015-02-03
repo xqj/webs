@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>rcj</RootNamespace>
     <AssemblyName>rcj</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>D:\MyProject\webs\webs\Backup\rcj\</UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +35,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -45,6 +50,7 @@
   <ItemGroup>
     <Folder Include="op\" />
     <Folder Include="js\" />
+    <Folder Include="App_Code\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="op\op.css" />
@@ -299,6 +305,8 @@
     <Content Include="js\b\i.js" />
     <Content Include="js\c\jquery-1.8.2.min.js" />
     <Content Include="js\c\json2.js" />
+    <Content Include="controller.ashx" />
+    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="op\editor\dialogs\wordimage\fClipboard_ueditor.swf" />
@@ -308,5 +316,16 @@
     <None Include="op\editor\third-party\video-js\video-js.swf" />
     <None Include="op\editor\third-party\webuploader\Uploader.swf" />
     <None Include="op\editor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <None Include="config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Config.cs" />
+    <Compile Include="App_Code\ConfigHandler.cs" />
+    <Compile Include="App_Code\CrawlerHandler.cs" />
+    <Compile Include="App_Code\Handler.cs" />
+    <Compile Include="App_Code\ListFileHandler.cs" />
+    <Compile Include="App_Code\NotSupportedHandler.cs" />
+    <Compile Include="App_Code\PathFormater.cs" />
+    <Compile Include="App_Code\UploadHandler.cs" />
   </ItemGroup>
 </Project>
