@@ -11,14 +11,12 @@ namespace Webs.WebProvider
 {
     public class AdminController : Controller
     {
-        [UserSecurity]
-        public ActionResult ChannelList(int siteId)
-        {
-            var channels = ChannelProvider.Intance.GetAllList(siteId);
-            if (!channels.Result)
-            { channels.Data = new List<Model.Channel>(); }
-            return View(channels);
-        }
+		[UserSecurity]
+		public ActionResult ChannelList(int id)
+		{
+			ViewData["id"] = id;
+			return View();
+		}
         [UserSecurity]
         [HttpPost]
         public ActionResult GetChannels(int siteId)
@@ -35,12 +33,13 @@ namespace Webs.WebProvider
              var infos = InfoProvider.Instance.GetPager(pageSize, pageCurrentIndex, channelId);
             return Json(infos);
         }
-        [UserSecurity]
-        public ActionResult Detail(int id)
-        {
-            var info = InfoProvider.Instance.GetAdminInfoById(id);
-            return View(info);
-        }
+		[UserSecurity]
+		[HttpPost]
+		public ActionResult Detail(int id)
+		{
+			var info = InfoProvider.Instance.GetAdminInfoById(id);
+			return Json(info);
+		}
         [UserSecurity]
         [HttpPost]
         [ValidateInput(false)]

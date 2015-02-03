@@ -48,9 +48,9 @@ var opContent = {
             UE.getEditor('editor').setContent("");
     },
     save: function () {
-        var ea=$("#aEnable").attr("checked");
+        var ea=$("#aEnable").attr("checked")?true:false;
         var content=UE.getEditor('editor').getContent();
-        $.post(pageData.saveUrl, { "id": opContent.cid, "ShowSort": $("#ShowSort").val(), "InfoTitle": $("#InfoTitle").val(), "TitleImg": $("#TitleImg").val(), "JumpUrl": $("#JumpUrl").val(), "InfoContent": content, "Enable": ea }, function (data) {
+        $.post(pageData.saveUrl, {"channelId": pageData.channelId, "infoId": opContent.cid, "ShowSort": $("#ShowSort").val(), "InfoTitle": $("#InfoTitle").val(), "TitleImg": $("#TitleImg").val(), "JumpUrl": $("#JumpUrl").val(), "InfoContent": content, "Enable": ea }, function (data) {
             alert(data.Message);
         }, "json");
     },
