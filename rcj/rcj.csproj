@@ -36,7 +36,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -307,6 +307,7 @@
     <Content Include="js\c\json2.js" />
     <Content Include="controller.ashx" />
     <Content Include="web.config" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="op\editor\dialogs\wordimage\fClipboard_ueditor.swf" />
