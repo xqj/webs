@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-
+namespace Webs.rcj
+{
 /// <summary>
 /// FileManager 的摘要说明
 /// </summary>
@@ -103,4 +104,5 @@ public class ListFileManager : Handler
         }
         return "未知错误";
     }
+}
 }

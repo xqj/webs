@@ -4,7 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
-
+namespace Webs.rcj
+{
 /// <summary>
 /// Crawler 的摘要说明
 /// </summary>
@@ -100,4 +101,5 @@ public class Crawler
             return this;
         }
     }
+}
 }

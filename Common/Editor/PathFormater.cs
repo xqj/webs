@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
-
+namespace Webs.rcj
+{
 /// <summary>
 /// PathFormater 的摘要说明
 /// </summary>
@@ -47,4 +48,5 @@ public static class PathFormatter
 
         return pathFormat + extension;
     }
+}
 }

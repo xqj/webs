@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 
-
+namespace Webs.rcj
+{
 /// <summary>
 /// Handler 的摘要说明
 /// </summary>
@@ -41,4 +42,5 @@ public abstract class Handler
     public HttpResponse Response { get; private set; }
     public HttpContext Context { get; private set; }
     public HttpServerUtility Server { get; private set; }
+}
 }

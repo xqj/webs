@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+namespace Webs.rcj
+{
 /// <summary>
 /// NotSupportedHandler 的摘要说明
 /// </summary>
@@ -20,4 +21,5 @@ public class NotSupportedHandler : Handler
             state = "action 参数为空或者 action 不被支持。"
         });
     }
+}
 }

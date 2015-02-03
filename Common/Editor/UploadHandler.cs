@@ -4,7 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
-
+namespace Webs.rcj
+{
 /// <summary>
 /// UploadHandler 的摘要说明
 /// </summary>
@@ -180,3 +181,4 @@ public enum UploadState
     Unknown = 1,
 }
 
+}

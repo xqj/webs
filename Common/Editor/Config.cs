@@ -10,6 +10,8 @@ using System.Web;
 /// <summary>
 /// Config 的摘要说明
 /// </summary>
+namespace Webs.rcj
+{
 public static class Config
 {
     private static bool noCache = true;
@@ -52,4 +54,5 @@ public static class Config
     {
         return GetValue<int>(key);
     }
+}
 }

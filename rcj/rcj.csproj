@@ -50,7 +50,6 @@
   <ItemGroup>
     <Folder Include="op\" />
     <Folder Include="js\" />
-    <Folder Include="App_Code\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="op\op.css" />
@@ -320,13 +319,9 @@
     <None Include="config.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Config.cs" />
-    <Compile Include="App_Code\ConfigHandler.cs" />
-    <Compile Include="App_Code\CrawlerHandler.cs" />
-    <Compile Include="App_Code\Handler.cs" />
-    <Compile Include="App_Code\ListFileHandler.cs" />
-    <Compile Include="App_Code\NotSupportedHandler.cs" />
-    <Compile Include="App_Code\PathFormater.cs" />
-    <Compile Include="App_Code\UploadHandler.cs" />
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{B285A545-5314-4ECE-97F4-08E89D88A9AF}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
