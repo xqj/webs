@@ -32,7 +32,7 @@ var opContent = {
                 $("#aEnable").attr("checked",false);
             }
             $("#JumpUrl").val(data.JumpUrl);
-            $('#editor').html(data.InfoContent);
+            UE.getEditor('editor').setContent(data.InfoContent);
             }
         }, "json");
 
@@ -45,12 +45,12 @@ var opContent = {
             $("#TitleImg").val("");           
                 $("#aEnable").attr("checked",true);           
             $("#JumpUrl").val("");
-            $('#editor').html();
+            UE.getEditor('editor').setContent("");
     },
     save: function () {
-        var ea=$("#aEnable").attr("checked")?true:false;
-        var content=$('#editor').html();
-        $.post(pageData.saveUrl, {"channelId": pageData.channelId, "infoId": opContent.cid, "ShowSort": $("#ShowSort").val(), "InfoTitle": $("#InfoTitle").val(), "TitleImg": $("#TitleImg").val(), "JumpUrl": $("#JumpUrl").val(), "InfoContent": content, "Enable": ea }, function (data) {
+        var ea=$("#aEnable").attr("checked");
+        var content=UE.getEditor('editor').getContent();
+        $.post(pageData.saveUrl, { "id": opContent.cid, "ShowSort": $("#ShowSort").val(), "InfoTitle": $("#InfoTitle").val(), "TitleImg": $("#TitleImg").val(), "JumpUrl": $("#JumpUrl").val(), "InfoContent": content, "Enable": ea }, function (data) {
             alert(data.Message);
         }, "json");
     },
@@ -71,6 +71,6 @@ function bingEvent() {
     $("#del").click(opContent.del);
     $("#more").click(opList.moreAction);
 }
-
+var ue = UE.getEditor('editor');
 bingEvent();
 opList.moreAction();
