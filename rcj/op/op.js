@@ -60,8 +60,8 @@ var opContent = {
     },
     del: function () {
         $.post(pageData.delUrl, { "id": opContent.cid }, function (data) {
-            if (data.ActionResult) {
-                window.location = "" + pageData.channelId;
+            if (data.Result) {
+                window.location = pageData.channelUrl + pageData.channelId;
             }else
             {
                 alert(data.Message);

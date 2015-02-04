@@ -44,6 +44,13 @@ namespace Webs.WebProvider
         }
         [UserSecurity]
         [HttpPost]
+        public ActionResult ds(int id)
+        {
+            var info = InfoProvider.Instance.Delete(id);
+            return Json(info);
+        }
+        [UserSecurity]
+        [HttpPost]
         [ValidateInput(false)]
         public ActionResult InfoEdit(int infoId, int channelId, string infoTitle, string infoContent, int ShowSort = 0, bool Enable = true, string TitleImg = null, string JumpUrl = "")
         {

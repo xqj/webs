@@ -181,5 +181,11 @@ namespace Webs.Dao
             }
             return data;
         }
+
+        internal static bool Delete(int id)
+        {
+            string sqlCmd = string.Format("update Info set IsDelete=1 where InfoId={0}", id.ToString());
+            return MysqlHelper.ExecuteNonQuery(sqlCmd) > 0;
+        }
     }
 }

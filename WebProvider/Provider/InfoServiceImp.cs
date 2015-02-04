@@ -62,5 +62,11 @@ namespace Webs.Provider
             var result = new OperationResult<Info>(info, (info != null));
             return result;
         }
+
+        internal OperationResult<bool> Delete(int id)
+        {
+             var result = new OperationResult<bool>(InfoDao.Delete(id));
+            return result;
+        }
     }
 }
