@@ -76,8 +76,7 @@ iframe{
       cursor:pointer;
        border-radius:12px;
 }
-.pcright{
-    background-color:#f2f0f0;
+.pcright{     
      float:left;
     width:75%;
    padding-top:8px;

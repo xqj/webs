@@ -121,14 +121,8 @@ namespace Webs.Dao
                     Info data = new Info()
                     {
                         InfoContent = dr["InfoTitle"].ToString(),
-                        ShowSort = dr.GetInt32("ShowSort"),
                         InfoId = dr.GetInt32("InfoId"),
-                        InfoTitle = dr["InfoTitle"].ToString(),
-                        CreateBy = dr.GetInt32("CreateBy"),
-                        CreateTime = dr.GetDateTime("CreateTime"),
-                        Enable = dr.GetBoolean("Enable"),
-                        ModifyBy = dr.GetInt32("ModifyBy"),
-                        ModifyTime = dr.GetDateTime("ModifyTime"),
+                        InfoTitle = dr["InfoTitle"].ToString(),                    
                         TitleImg = dr["TitleImg"].ToString(),
 
                     };
@@ -146,9 +140,9 @@ namespace Webs.Dao
            return MysqlHelper.ExecuteNonQuery(sqlCmd) > 0;
         }
 
-        internal static int Insert(int userId,  int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg)
+        internal static int Insert(int userId, int channelId, int ShowSort, string infoTitle, string infoContent, bool Enable, string TitleImg, string JumpUrl="")
         {
-            string sqlCmd = string.Format("insert Info(ShowSort,InfoTitle,InfoContent,TitleImg,Enable,CreateTime,CreateBy) values({0},'{1}','{2}','{3}',{4},{5},{6});select mysql_insert_id();", ShowSort.ToString(), infoTitle, infoContent, TitleImg, Enable ? "1" : "0", "now()", userId);
+            string sqlCmd = string.Format("insert Info(ShowSort,InfoTitle,InfoContent,TitleImg,Enable,CreateTime,CreateBy,ModifyTime,ModifyBy,JumpUrl,IsJump) values({0},'{1}','{2}','{3}',{4},{5},{6},{7},{8},'{9}',{10});select last_insert_id();", ShowSort.ToString(), infoTitle, infoContent, TitleImg, Enable ? "1" : "0", "now()", userId, "now()", userId, JumpUrl, string.IsNullOrEmpty(JumpUrl)?0:1);
              int  dataId = 0;
             using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
             {

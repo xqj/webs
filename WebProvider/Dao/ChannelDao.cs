@@ -14,11 +14,11 @@ namespace Webs.Dao
         internal static List<Model.Channel> GetShowIndexChannels(int channelCount, int siteId)
         {
             List<Channel> list = new List<Model.Channel>();
-            StringBuilder sqlCmd = new StringBuilder("select * from Channel");           
+            StringBuilder sqlCmd = new StringBuilder("select * from Channel limit ");
+            sqlCmd.Append(channelCount.ToString());
             sqlCmd.Append(" where IsDelete=0 and Enable=1 and IsShowIndex=1 and SiteId=");
             sqlCmd.Append(siteId.ToString());
-			sqlCmd.Append(" order by IndexShowSort asc limit");
-			sqlCmd.Append(channelCount.ToString());
+            sqlCmd.Append(" order by IndexShowSort asc");
             using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
             {
                 while (dr.Read())
@@ -73,34 +73,5 @@ namespace Webs.Dao
             if (list.Count == 0) list = null;
             return list;
         }
-		internal static Channel GetInfoById(int channelid)
-		{
-			StringBuilder sqlCmd = new StringBuilder("select * from Channel");
-			sqlCmd.Append(" where ChannelId=");
-			sqlCmd.Append(channelid.ToString());
-			Channel data = null;
-			using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
-			{
-				if (dr.Read())
-				{
-					data = new Channel()
-					{
-						ChannelId = dr.GetInt32("ChannelId"),
-						ChannelName = dr["ChannelName"].ToString(),
-						CreateBy = dr.GetInt32("CreateBy"),
-						CreateTime = dr.GetDateTime("CreateTime"),
-						Enable = dr.GetBoolean("Enable"),
-						IndexShowSort = dr.GetInt32("IndexShowSort"),
-						InfoTotal = dr.GetInt32("InfoTotal"),
-						IsShowIndex = dr.GetBoolean("IsShowIndex"),
-						ModifyBy = dr.GetInt32("ModifyBy"),
-						ModifyTime = dr.GetDateTime("ModifyTime"),
-						SiteId = dr.GetInt32("SiteId"),
-					};                  
-				}
-			}
-
-			return data;
-		}
     }
 }

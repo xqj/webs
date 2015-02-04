@@ -50,8 +50,12 @@ var opContent = {
     save: function () {
         var ea=$("#aEnable").attr("checked");
         var content=UE.getEditor('editor').getContent();
-        $.post(pageData.saveUrl, { "id": opContent.cid, "ShowSort": $("#ShowSort").val(), "InfoTitle": $("#InfoTitle").val(), "TitleImg": $("#TitleImg").val(), "JumpUrl": $("#JumpUrl").val(), "InfoContent": content, "Enable": ea }, function (data) {
+        $.post(pageData.saveUrl, { "infoId": opContent.cid,"channelId":pageData.channelId, "ShowSort": $("#ShowSort").val(), "InfoTitle": $("#InfoTitle").val(), "TitleImg": $("#TitleImg").val(), "JumpUrl": $("#JumpUrl").val(), "InfoContent": content, "Enable": ea }, function (data) {
             alert(data.Message);
+            $("#infolist").html("");
+             opList.currentIndex=1;
+            opList.moreAction();
+           
         }, "json");
     },
     del: function () {

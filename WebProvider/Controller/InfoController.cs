@@ -15,16 +15,16 @@ namespace Webs.WebProvider
         //
         // GET: /Info/
 
-        public ActionResult Index(int channelTotal=8)
+        public ActionResult Index(int channelTotal)
         {
             Dictionary<int, ChannelView> blockData = new Dictionary<int, ChannelView>();
-            int channelCount = 10  ;
+            int channelCount = 0;
             var channels = ChannelProvider.Intance.GetShowIndexChannels(channelCount, _siteId);
             if (!channels.Result)
             { channels.Data = new List<Model.Channel>(); }
             channels.Data.ForEach(a =>
             {
-					var view = new ChannelView(a);
+                var view = (ChannelView)a;
                 view.ChannelContent = InfoProvider.Instance.GetTopListByChannelId(a.ChannelId, channelTotal).Data;
                 blockData.Add(a.ChannelId, view);
             });
@@ -36,13 +36,17 @@ namespace Webs.WebProvider
             ViewData["labelsData"] = labels;
             return View(blockData);
         }
-		public ActionResult List(int cid)
+        public ActionResult List()
         {
-			var channel = ChannelProvider.Intance.GetChannel(cid);
-			if (channel.Result)
-				ViewData["channelsData"] = channel.Data;
-			var infos = InfoProvider.Instance.GetPager(15, 1, cid);
-			return View(infos);
+            var channels = ChannelProvider.Intance.GetAllList(_siteId);
+               if (!channels.Result)
+            { channels.Data = new List<Model.Channel>(); }           
+            int lableCount = 0;
+            var labels = LableProvider.Instance.GetShowIndexLables(lableCount);
+            if (labels == null) labels.Data = new List<Model.Lable>();         
+            ViewData["channelsData"] = channels;
+            ViewData["labelsData"] = labels;
+            return View();
         }
         [HttpPost]
         public ActionResult InfoPager(int pageSize,int pageCurrentIndex,int channelId)

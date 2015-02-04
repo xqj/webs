@@ -19,7 +19,7 @@ namespace Webs.Provider
         internal OperationResult<List<Channel>> GetShowIndexChannels(int channelCount,int siteId)
         {
             List<Channel> list = ChannelDao.GetShowIndexChannels(channelCount, siteId);
-            var result = new OperationResult<List<Channel>>(list,(list != null));
+            var result = new OperationResult<List<Channel>>(list,(list == null));
             return result;
         }
 
@@ -29,11 +29,5 @@ namespace Webs.Provider
             var result = new OperationResult<List<Channel>>(list, (list != null));
             return result;
         }
-		internal OperationResult<Channel> GetChannel(int channelid)
-		{
-			var data = ChannelDao.GetInfoById(channelid);
-			var result = new OperationResult<Channel>(data, (data != null));
-			return result;
-		}
     }
 }
