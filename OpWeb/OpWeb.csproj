@@ -93,4 +93,10 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <ProjectReference Include="..\WebProvider\WebProvider.csproj">
+      <Project>{B354DA5D-DDC9-419C-8713-2305C08C830D}</Project>
+      <Name>WebProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
