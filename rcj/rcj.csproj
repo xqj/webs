@@ -47,6 +47,8 @@
   <ItemGroup>
     <Folder Include="op\" />
     <Folder Include="js\" />
+    <Folder Include="hi\" />
+    <Folder Include="blog\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="op\op.css" />
@@ -55,5 +57,12 @@
     <Content Include="js\c\jquery-1.8.2.min.js" />
     <Content Include="js\c\json2.js" />
     <Content Include="web.config" />
+    <Content Include="hi\haoqihao.jpg" />
+    <Content Include="hi\i.css" />
+    <Content Include="hi\index.html" />
+    <Content Include="blog\blog.css" />
+    <Content Include="blog\blog.js" />
+    <Content Include="blog\Detail.html" />
+    <Content Include="blog\Index.html" />
   </ItemGroup>
 </Project>
