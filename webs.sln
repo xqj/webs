@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rcj", "rcj\rcj.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Editor\Editor.csproj", "{C7D7A14C-F70B-459E-B3BA-A096EF64EB93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpWeb", "OpWeb\OpWeb.csproj", "{9AD0D6C8-FBC9-4329-A14C-529BA221FC29}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dll", "dll", "{00A338CF-ABF7-40BC-A0EE-8F8C30B99F51}"
 	ProjectSection(SolutionItems) = preProject
 		dll\nunit.framework.dll = dll\nunit.framework.dll
@@ -70,10 +68,6 @@ Global
 		{84B3FB91-C529-43EC-9CA4-37377A3356A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84B3FB91-C529-43EC-9CA4-37377A3356A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84B3FB91-C529-43EC-9CA4-37377A3356A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AD0D6C8-FBC9-4329-A14C-529BA221FC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AD0D6C8-FBC9-4329-A14C-529BA221FC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AD0D6C8-FBC9-4329-A14C-529BA221FC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AD0D6C8-FBC9-4329-A14C-529BA221FC29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B285A545-5314-4ECE-97F4-08E89D88A9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B285A545-5314-4ECE-97F4-08E89D88A9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B285A545-5314-4ECE-97F4-08E89D88A9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
