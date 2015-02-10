@@ -126,6 +126,10 @@ namespace Webs.Dao
                         TitleImg = dr["TitleImg"].ToString(),
 
                     };
+					if (String.IsNullOrEmpty (data.TitleImg))
+						data.IsTitleImg = false;
+					else
+						data.IsTitleImg = true;
                     list.Add(data);
                 }
             }

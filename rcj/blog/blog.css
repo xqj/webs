@@ -63,6 +63,16 @@ img{
      position:static;
       text-align:left;
       font-size:19pt;
+      padding-bottom:8px;
+      margin-bottom:8px;
+}
+.bigmore{
+     width:100px;
+     height:32px;;
+     position:static;
+      text-align:center;
+      font-size:19pt;
+      float:right;
 }
 .wrapImg{
     width:280px;

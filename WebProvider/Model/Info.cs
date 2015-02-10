@@ -18,6 +18,8 @@ namespace Webs.Model
         public string InfoContent { set; get; }
         [DataMember]
         public string TitleImg { set; get; }
+		[DataMember]
+		public bool IsTitleImg { set; get; }
         [DataMember]
         public int ShowSort { set; get; }
     }
