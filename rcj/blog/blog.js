@@ -7,17 +7,17 @@ var pageAction={
    $(".bigmore").click(pageAction.initList);
    },
 	initList:function(){
-	$.post(page.infoUrl, { "pageSize": this.pageSize, "pageCurrentIndex": this.pageCurrentIndex, "channelId": pageData.channelId },
+	$.post(page.infoUrl, { "pageSize": pageAction.pageSize, "pageCurrentIndex": pageAction.pageCurrentIndex, "channelId": pageData.channelId },
      function (data) {
             pageIndex=pageAction.pageCurrentIndex;
             pageIndex++
             if ((data.List) && (data.List.length > 0)) {
                 for (var i = 0; i < data.List.length; i++) {
                 var html='<div class="rightListdiv">';
-                html=html+' <h1><a href="Detail/'+data.List[i].InfoId+'" class="rightListdiva" target="_blank">'+((data.List[i].InfoTitle.length>16)?data.List[i].InfoTitle.substring(0,16):data.List[i].InfoTitle)+'</a></h1>';
+                html=html+' <h1><a href="Home/Detail/'+data.List[i].InfoId+'" class="rightListdiva" target="_blank">'+((data.List[i].InfoTitle.length>16)?data.List[i].InfoTitle.substring(0,16):data.List[i].InfoTitle)+'</a></h1>';
                 if(data.List[i].IsTitleImg)
                     html=html+' <div class="wrapImg"><img src="'+data.List[i].TitleImg+'" class="listimg" /></div>';
-                 html=html+'&nbsp&nbsp&nbsp'+((data.List[i].InfoContent.length>137)?data.List[i].InfoContent.substring(0,137):data.List[i].InfoContent)+'......【<a href="###" class="more" target="_blank">更多</a>】</div>';
+                 html=html+'&nbsp&nbsp&nbsp'+((data.List[i].InfoContent.length>137)?data.List[i].InfoContent.substring(0,137):data.List[i].InfoContent)+'......【<a href="Home/Detail/'+data.List[i].InfoId+'" class="more" target="_blank">更多</a>】</div>';
                 $("#infolist").append(html);
                 }
             } else {
@@ -27,8 +27,8 @@ var pageAction={
         }, "json");
 	},
     changeChannel:function(id){
-        pageData.channelId=id;
-        pageData.initList();
+        page.channelId=id;
+        pageAction.initList();
     }
 }
     pageAction.initLinkAction();
