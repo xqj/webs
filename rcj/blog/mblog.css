@@ -1,0 +1,122 @@
+﻿body {
+ font-family: "Segoe UI","Lucida Grande","Helvetica Neue",sans-serif;
+}
+div{
+    border:none;
+    margin:0 0 0 0;
+    padding:0 0 0 0;
+}
+img{
+    border:none;
+    margin:0 0 0 0;
+    padding:0 0 0 0;
+}
+.wrapDiv{
+    margin-left:auto;
+    margin-right:auto;
+    width:1024px;
+    height:auto;
+}
+.wrapLogo {
+    width:100%;
+    height:60px;
+    font-size:32pt;
+    font-weight:900;
+    border-bottom:dashed;
+    border-width:2px;
+    border-color:#12c2ce;
+    padding-bottom:16px;
+}
+.wrapLogo span{
+   color:#12c2ce;
+}
+.leftMenu{  
+    width:100%;
+   height:45px;
+  position:static;
+padding-top:12px;
+}
+.leftMenu ul{  
+   list-style:none;
+   margin:0 0 0 0;    
+   padding:0 0 0 0;
+}
+.leftMenu li{  
+   float:left;
+   padding-right:12px; 
+}
+
+.leftMenu a{
+  font-size:22pt;
+  font-weight:900;
+  color:#1d1a1a;
+  text-decoration:none;
+}
+.leftMenu a:hover{
+  font-size:22pt;
+  font-weight:900;
+   color:#12c2ce;
+}
+.rightList{
+    width:100%;
+    margin-top:10px;
+}
+.rightListdiv{
+     width:100%;
+     height:auto;
+     position:static;
+      text-align:left;
+      font-size:19pt;
+     border-top:groove;
+    border-width:2px;
+    border-color:#12c2ce;
+   
+}
+.wrapImg{
+    width:280px;
+    height:240px;
+    border-style:groove;
+    border-width:1px;
+    border-color:#808080;
+    float:left;    
+    margin-right:4px;
+}
+.listimg{   
+    margin-left:2px;
+    margin-top:2px;
+   width:276px;
+    height:236px;   
+}
+.rightList h1{
+     font-size:24pt;
+     font-weight:900;    
+}
+.rightListdiva{
+    text-decoration:none;
+     color:#383636;   
+}
+.rightListdiva:hover{
+    text-decoration:underline;
+     color:#747070;     
+}
+.more{
+     color:#12c2ce;
+     text-decoration:none;
+}
+.more:hover{
+     text-decoration:underline;
+}
+.pageContent{
+      float:right;
+    width:80%;
+    height:auto;
+     font-size:19pt;
+}
+.bigmore{
+     width:100px;
+     height:32px;;
+     position:static;
+      text-align:center;
+      font-size:19pt;
+      float:right;
+}

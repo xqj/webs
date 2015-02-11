@@ -64,5 +64,6 @@
     <Content Include="blog\blog.js" />
     <Content Include="blog\Detail.html" />
     <Content Include="blog\Index.html" />
+    <Content Include="blog\mblog.css" />
   </ItemGroup>
 </Project>
