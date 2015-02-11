@@ -1,10 +1,9 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupItem="Common/Common.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="rcj/blog/blog.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebBlog/Views/Home/Detail.cshtml">
     <Files>
-      <File FileName="WebBlog/Controllers/HomeController.cs" Line="72" Column="72" />
-      <File FileName="WebBlog/Views/Home/Index.cshtml" Line="13" Column="13" />
-      <File FileName="rcj/blog/blog.js" Line="2" Column="2" />
+      <File FileName="WebBlog/Views/Home/Detail.cshtml" Line="4" Column="4" />
+      <File FileName="WebBlog/Controllers/HomeController.cs" Line="43" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

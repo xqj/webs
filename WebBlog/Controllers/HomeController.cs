@@ -23,11 +23,14 @@ namespace Webs.WebProvider
             var infos = InfoProvider.Instance.GetPager(pageSize, pageCurrentIndex, channelId);
 			return Json(infos);
         }
-        public ActionResult Detail(int id)
+		public ActionResult Detail(int id)
         {
               var info = InfoProvider.Instance.GetInfoById(id);
-           
-            return View(info);
+			if (info.Result) {
+				ViewData ["title"] = info.Data.InfoTitle;
+				ViewData ["content"] = info.Data.InfoContent;
+			}
+            return View();
         }
     }
 }
