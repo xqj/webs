@@ -318,6 +318,7 @@
     <Content Include="editor\third-party\webuploader\webuploader.withoutimage.min.js" />
     <Content Include="editor\third-party\zeroclipboard\ZeroClipboard.js" />
     <Content Include="editor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

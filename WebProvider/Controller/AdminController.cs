@@ -59,7 +59,7 @@ namespace Webs.WebProvider
             return Json(msg);
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Login(string un, string p)
         {
             var r = SecurityProvider.Instance.Login(un, p);

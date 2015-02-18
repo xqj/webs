@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-	<title>Default</title>
+	<title>Hsiech Ching Jing的技术博客</title>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
  <link href="http://r.xieqj.cn/hi/i.css" rel="stylesheet" />
 </head>
 <body>
