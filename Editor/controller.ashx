@@ -11,6 +11,7 @@ public class UEditorHandler : IHttpHandler
 {
     public void ProcessRequest(HttpContext context)
     {
+    		Security.SecurityUser();
         Handler action = null;
         switch (context.Request["action"])
         {
