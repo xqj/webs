@@ -38,6 +38,7 @@
     <Content Include="Global.asax" />
     <Content Include="web.config" />
     <Content Include="Default.aspx" />
+    <Content Include="Common.master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -48,6 +49,12 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common.master.cs">
+      <DependentUpon>Common.master</DependentUpon>
+    </Compile>
+    <Compile Include="Common.master.designer.cs">
+      <DependentUpon>Common.master</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

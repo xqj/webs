@@ -11,12 +11,14 @@
 namespace WebHi {
 	
 	
-	public partial class Default {
+	public partial class Common {
 		
-		protected System.Web.UI.WebControls.Content pageHead;
+		protected System.Web.UI.HtmlControls.HtmlHead Head1;
 		
-		protected System.Web.UI.WebControls.Content pageBody;
+		protected System.Web.UI.WebControls.ContentPlaceHolder head;
 		
-		protected System.Web.UI.WebControls.Content pageJs;
+		protected System.Web.UI.WebControls.ContentPlaceHolder htmlBody;
+		
+		protected System.Web.UI.WebControls.ContentPlaceHolder jsWrap;
 	}
 }

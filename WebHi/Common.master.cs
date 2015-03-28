@@ -4,10 +4,11 @@ using System.Web.UI;
 
 namespace WebHi
 {
-	
-	public partial class Default : System.Web.UI.Page
+	public partial class Common : System.Web.UI.MasterPage
 	{
 		protected bool isLow = false;
+
+
 	}
 }
 
