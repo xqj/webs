@@ -78,6 +78,7 @@
     <Folder Include="..\WebOp\" />
     <Folder Include="Controllers\" />
     <Folder Include="Views\Shared\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -90,6 +91,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Scripts\list.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

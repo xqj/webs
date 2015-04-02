@@ -22,9 +22,14 @@ namespace Webs.WebProvider
             return View();
         }
         [HttpPost]
-        public ActionResult InfoPager(int pageSize,int pageCurrentIndex,int channelId)
+		public ActionResult InfoPager(int pageSize,int pageCurrentIndex,int channelId,int simpleSize)
         {
             var infos = InfoProvider.Instance.GetPager(pageSize, pageCurrentIndex, channelId);
+			if (infos.List != null) {
+				infos.List.ForEach (a => {
+					a.InfoContent=(a.InfoContent.Length>simpleSize)?(a.InfoContent.Substring(0,(simpleSize-4))+"..."):a.InfoContent;
+				});
+			}
 			return Json(infos);
         }
 		public ActionResult Detail(int id)
