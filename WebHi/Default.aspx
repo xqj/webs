@@ -23,7 +23,7 @@
             <div id="contact">
                 <div id="contact-header">
                     <h2>
-                        <a href="#contact"><span>A.I.</span></a></h2>
+                        <a href="#contact"><span>无人化</span></a></h2>
                 </div>
                 <div id="locations-nav-container">
                     <ul>
@@ -95,9 +95,9 @@
                 </div>
                 <div id="us-nav">
                     <ul>
-                        <li><a href="#me" target="_self">Me</a></li>
-                        <li><a href="#skill" target="_self">Skills</a></li>
-                        <li><a href="#project" target="_self">Projects</a></li>
+                        <li><a href="#me" target="_self">我</a></li>
+                        <li><a href="#skill" target="_self">技能</a></li>
+                        <li><a href="#project" target="_self">项目</a></li>
                         <li class="last"><a href="#blog" class="blog" target="_self">Blog</a></li>
                     </ul>
                 </div>
