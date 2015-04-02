@@ -23,7 +23,7 @@
             <div id="contact">
                 <div id="contact-header">
                     <h2>
-                        <a href="#contact"><span>企业无人化</span></a></h2>
+                        <a href="#contact"><span>A.I.</span></a></h2>
                 </div>
                 <div id="locations-nav-container">
                     <ul>
@@ -136,7 +136,7 @@
                                     blog</h3>
                             </div>
                             <div id="blog" class="founder-blurb"><br />
-                               <p>博客：<a href="http://blog.xieqj.cn/" style="font-size:32px">http://blog.xieqj.cn</a><br /></p>
+                               <p>博客：<a href="http://blog.xieqj.cn/">http://blog.xieqj.cn</a><br /></p>
                                <p>邮箱：<a target="_blank" href="mailto:xieqj@war2045.com" style="text-decoration:none;">xieqj@war2045.com</a></p>
                             </div>
                         </div>
