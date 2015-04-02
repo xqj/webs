@@ -73,5 +73,35 @@ namespace Webs.Dao
             if (list.Count == 0) list = null;
             return list;
         }
+		internal static Model.Channel GetById(int siteId,int id)
+		{
+			Channel data = null;
+			StringBuilder sqlCmd = new StringBuilder("select * from Channel");
+			sqlCmd.Append(" where IsDelete=0 and Enable=1 and ChannelId=");
+			sqlCmd.Append(id.ToString()+" and SiteId=");
+			sqlCmd.Append(siteId.ToString());
+			using (var dr = MysqlHelper.ExcuteReader(sqlCmd.ToString()))
+			{
+				if (dr.Read())
+				{
+					data = new Channel()
+					{
+						ChannelId = dr.GetInt32("ChannelId"),
+						ChannelName = dr["ChannelName"].ToString(),
+						CreateBy = dr.GetInt32("CreateBy"),
+						CreateTime = dr.GetDateTime("CreateTime"),
+						Enable = dr.GetBoolean("Enable"),
+						IndexShowSort = dr.GetInt32("IndexShowSort"),
+						InfoTotal = dr.GetInt32("InfoTotal"),
+						IsShowIndex = dr.GetBoolean("IsShowIndex"),
+						ModifyBy = dr.GetInt32("ModifyBy"),
+						ModifyTime = dr.GetDateTime("ModifyTime"),
+						SiteId = dr.GetInt32("SiteId"),
+					};
+
+				}
+			}
+			return data;
+		}
     }
 }

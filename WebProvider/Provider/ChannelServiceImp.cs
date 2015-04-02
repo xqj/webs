@@ -11,7 +11,7 @@ namespace Webs.Provider
     {
         private static ChannelProvider _intance = new ChannelProvider();
 
-        internal static ChannelProvider Intance
+		public static ChannelProvider Intance
         {
             get { return _intance; }           
         }
@@ -29,5 +29,11 @@ namespace Webs.Provider
             var result = new OperationResult<List<Channel>>(list, (list != null));
             return result;
         }
+		public OperationResult<Channel> GetById(int siteId,int id)
+		{
+			Channel info = ChannelDao.GetById (siteId, id);
+			var result = new OperationResult<Channel>(info, (info != null));
+			return result;
+		}
     }
 }
