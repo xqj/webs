@@ -22,7 +22,7 @@
 @section jsPackage{
     <script src="../../Scripts/list.js" type="text/javascript"></script>
      <script type="text/javascript">
-         pageWrap.channelId = 0;
+         pageWrap.channelId = ViewData ["id"];
          pageWrap.detailUrlTpl = '@Url.Action("Detail")?id=';
          pageWrap.listTpl = '<li class="demoli"><a href="{$0}" class="newlink">{$1}</a><p>{$2}</p></li>';
          pageWrap.initPage();

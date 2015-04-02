@@ -38,6 +38,7 @@ namespace Webs.WebProvider
 			if (info.Result) {
 				ViewData ["title"] = info.Data.InfoTitle;
 				ViewData ["content"] = info.Data.InfoContent;
+				ViewData ["CreateTime"] = info.Data.CreateTime.ToString ("yyyy年MM月dd");
 			}
             return View();
         }
