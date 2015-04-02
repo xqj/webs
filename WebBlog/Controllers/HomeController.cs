@@ -13,12 +13,30 @@ namespace Webs.WebProvider
     {     
 		public ActionResult Index()
 		{           
-		
+			//操作手册
+			var list1 = InfoProvider.Instance.GetTopListByChannelId (1, 6);
+			ViewData ["list1"] = list1;
+			//凝点系列
+			var list2 = InfoProvider.Instance.GetTopListByChannelId (2, 4);
+			ViewData ["list2"] = list2;
+			//日积月累
+			var list3 = InfoProvider.Instance.GetTopListByChannelId (4, 6);
+			ViewData ["list3"] = list3;
+			//他山石
+			var list4 = InfoProvider.Instance.GetTopListByChannelId (3, 8);
+			ViewData ["list4"] = list4;
+			//项目
+			var list5 = InfoProvider.Instance.GetTopListByChannelId (5, 4);
+			ViewData ["list5"] = list5;
 			return View();
 		}
 		public ActionResult list(int i=1)
         {           
 			ViewData ["id"] = i;
+			var channel = ChannelProvider.Intance.GetById (1, i);
+			if (channel.Result) {
+				ViewBag.Title = channel.Data.ChannelName;
+			}
             return View();
         }
         [HttpPost]

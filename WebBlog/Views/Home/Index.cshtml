@@ -1,4 +1,4 @@
-﻿@{
+﻿﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
@@ -25,13 +25,15 @@
         <a href="@Url.Action("list", new { id = 1 })" title="点击查看更多">
             <h1>操作手册</h1></a>
             <ul>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-            </ul>
+            @{
+            Webs.Model.OperationResult<List<Info>> list1=(Webs.Model.OperationResult<List<Info>>)ViewData["list1"];
+            if(list1.Result){
+            for(int i=0;i<list1.Data.Count;i++){
+             	<li class="demoli"><a href='@Url.Action("Detail")@list1.Data[i].InfoId' class="newlink">@list1.Data[i].InfoTitle</a></li>
+            		}
+            	}            
+            }
+         </ul>
             
 </div>
 
@@ -39,11 +41,14 @@
         <a href="@Url.Action("list", new { id = 2 })" title="点击查看更多">
             <h1>凝点系列</h1></a>
             <ul>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-
+                 @{
+            Webs.Model.OperationResult<List<Info>> list2=(Webs.Model.OperationResult<List<Info>>)ViewData["list2"];
+            if(list2.Result){
+            for(int i=0;i<list2.Data.Count;i++){
+             	<li class="demoli"><a href='@Url.Action("Detail")@list2.Data[i].InfoId' class="newlink">@list2.Data[i].InfoTitle</a></li>
+            		}
+            	}            
+            }
             </ul>
 </div>
 
@@ -51,12 +56,14 @@
         <a href="@Url.Action("list", new { id = 4 })" title="点击查看更多">
             <h1>日积月累</h1></a>
             <ul>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
+            @{
+            Webs.Model.OperationResult<List<Info>> list4=(Webs.Model.OperationResult<List<Info>>)ViewData["list4"];
+            if(list4.Result){
+            for(int i=0;i<list4.Data.Count;i++){
+             	<li class="demoli"><a href='@Url.Action("Detail")@list4.Data[i].InfoId' class="newlink">@list4.Data[i].InfoTitle</a></li>
+            		}
+            	}            
+            }  
             </ul>
 </div>
 
@@ -64,26 +71,29 @@
         <a href="@Url.Action("list", new { id = 3 })" title="点击查看更多">
             <h1>他山石</h1></a>
             <ul>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-            </ul>
+               @{
+            Webs.Model.OperationResult<List<Info>> list3=(Webs.Model.OperationResult<List<Info>>)ViewData["list3"];
+            if(list3.Result){
+            for(int i=0;i<list3.Data.Count;i++){
+             	<li class="demoli"><a href='@Url.Action("Detail")@list3.Data[i].InfoId' class="newlink">@list3.Data[i].InfoTitle</a></li>
+            		}
+            	}            
+            }  
+                  </ul>
 </div>
 
     <div class="rotations">
         <a href="@Url.Action("list", new { id = 5 })" title="点击查看更多">
             <h1>项目</h1></a>
             <ul>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-                <li class="demoli"><a href="@Url.Action("Detail")" class="newlink">标题标题标题标题标题标题标题标题标题标题标题标题标题标题</a></li>
-
+                @{
+            Webs.Model.OperationResult<List<Info>> list5=(Webs.Model.OperationResult<List<Info>>)ViewData["list5"];
+            if(list5.Result){
+            for(int i=0;i<list5.Data.Count;i++){
+             	<li class="demoli"><a href='@Url.Action("Detail")@list5.Data[i].InfoId' class="newlink">@list5.Data[i].InfoTitle</a></li>
+            		}
+            	}            
+            }  
             </ul>
 </div>
 
