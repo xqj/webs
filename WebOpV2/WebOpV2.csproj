@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Login.aspx" />
+    <Content Include="Views\Article\ArticleList.aspx" />
     <Content Include="Views\Shared\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -69,6 +70,13 @@
     </Compile>
     <Compile Include="Views\Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Article\ArticleList.aspx.cs">
+      <DependentUpon>ArticleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Article\ArticleList.aspx.designer.cs">
+      <DependentUpon>ArticleList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Page.Master.cs">
       <DependentUpon>Page.Master</DependentUpon>
@@ -102,7 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
-    <Folder Include="Views\Article\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
