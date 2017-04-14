@@ -39,10 +39,10 @@
     <body class=" login">
         
         <!-- BEGIN LOGO -->
-        <div class="logo">
+    <%--    <div class="logo">
             <a href="index.html">
                 <img src="http://r.xieqj.cn/opv2/assets/pages/img/logo-big.png" alt="" /> </a>
-        </div>
+        </div>--%>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
         <div class="content">
@@ -66,7 +66,7 @@
             </form>
             <!-- END LOGIN FORM -->
         </div>
-        <div class="copyright"> 2017 </div>
+        <div class="copyright"> 2017 Corp</div>
         <!--[if lt IE 9]>
 <script src="http://r.xieqj.cn/opv2/assets/global/plugins/respond.min.js"></script>
 <script src="http://r.xieqj.cn/opv2/assets/global/plugins/excanvas.min.js"></script> 
