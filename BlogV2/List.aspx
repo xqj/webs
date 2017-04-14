@@ -48,9 +48,9 @@
                 </ul>
             </div>
         </div>
-        <div class="blog-post">
+        <div id="btnWrap" class="blog-post">
 
-            <a href="#">更多</a>
+            <a id="moreBtn" href="javascript:void(0);">更多</a>
 
         </div>
     </div>
@@ -58,6 +58,18 @@
     <script src="http://r.xieqj.cn/blogv2/foundation.js"></script>
     <script>
         $(document).foundation();
+        $(function () {
+            var pageIndex = 1;
+            $("#moreBtn").on("click", function () {
+                pageIndex = pageIndex + 1;
+                $.post("DataService.ashx", { pageIndex: pageIndex }, function (data) {
+                    if (data) {
+                        for (var i = 0; i < data.length;i++)
+                        $("#btnWrap").insertBefore();
+                    }
+                });
+            });
+        });
     </script>
 
 </body>

@@ -54,6 +54,7 @@
     <Compile Include="Controller\AdminController.cs" />
     <Compile Include="Controller\CurrentUser.cs" />
     <Compile Include="Controller\DefineTable.cs" />
+    <Compile Include="Controller\PagerController.cs" />
     <Compile Include="Controller\UserAttribute.cs" />
     <Compile Include="Dao\ChannelDao.cs" />
     <Compile Include="Dao\Channel_Info_RelationDao.cs" />
