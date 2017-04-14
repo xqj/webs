@@ -74,6 +74,9 @@
     <Folder Include="opv2\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="blogv2\foundation-icons.css" />
+    <Content Include="blogv2\foundation.js" />
+    <Content Include="blogv2\zcom.js" />
     <Content Include="opv2\assets\apps\css\inbox-rtl.min.css" />
     <Content Include="opv2\assets\apps\css\inbox.css" />
     <Content Include="opv2\assets\apps\css\inbox.min.css" />
@@ -5993,6 +5996,9 @@
     <Content Include="opv2\assets\layouts\layout7\img\Thumbs.db" />
     <Content Include="opv2\assets\pages\media\blog\Thumbs.db" />
     <Content Include="opv2\assets\pages\media\pages\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="blogv2\foundation.min.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v15.0\WebApplications\Microsoft.WebApplication.targets" />
 </Project>
