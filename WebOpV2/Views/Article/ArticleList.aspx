@@ -58,11 +58,11 @@
                                    1
                                 </td>
                                 <td class="highlight">
-                                    <a href="javascript:;">RedBull </a>
+                                    <a href="ArticleEdit.aspx">RedBull </a>
                                 </td>
                                 <td class="hidden-xs">Mike Nilson </td>
                                  <td>
-                                    <a href="javascript:;" class="btn btn-outline btn-circle btn-sm purple">
+                                    <a href="ArticleEdit.aspx" class="btn btn-outline btn-circle btn-sm purple">
                                         <i class="fa fa-edit"></i>Edit </a>
                                     <a href="javascript:;" class="btn btn-outline btn-circle dark btn-sm black">
                                         <i class="fa fa-trash-o"></i>Delete </a>

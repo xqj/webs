@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Login.aspx" />
+    <Content Include="Views\Article\ArticleEdit.aspx" />
     <Content Include="Views\Article\ArticleList.aspx" />
     <Content Include="Views\Shared\WebForm1.aspx" />
     <Content Include="Web.config" />
@@ -70,6 +71,13 @@
     </Compile>
     <Compile Include="Views\Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Article\ArticleEdit.aspx.cs">
+      <DependentUpon>ArticleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Article\ArticleEdit.aspx.designer.cs">
+      <DependentUpon>ArticleEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Article\ArticleList.aspx.cs">
       <DependentUpon>ArticleList.aspx</DependentUpon>
